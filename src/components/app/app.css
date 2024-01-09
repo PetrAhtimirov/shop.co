@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'Integral CF';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../../resources/fonts/integral-cf/IntegralCF-Bold.woff2") format("woff2"),
+       url("../../resources/fonts/integral-cf/IntegralCF-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../resources/fonts/satoshi/Satoshi-Regular.woff2") format("woff2"),
+       url("../../resources/fonts/satoshi/Satoshi-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: 'Satoshi';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../../resources/fonts/satoshi/Satoshi-Bold.woff2") format("woff2"),
+       url("../../resources/fonts/satoshi/Satoshi-Bold.woff") format("woff");
+}
+
+
+.app {
+  font-family: 'Satoshi', 'Arial', sans-serif;
+}
+
+.container {
+  max-width: 1240px;
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
