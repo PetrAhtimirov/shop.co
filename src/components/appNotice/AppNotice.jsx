@@ -5,7 +5,10 @@ import './appNotice.css';
 import closeImage from '../../resources/icons/close.svg';
 
 const AppNotice = () => {
-    const [show, setShow] = useState(true);
+    const noticeClosed = localStorage.getItem('noticeClosed');
+    const [show, setShow] = useState(
+        noticeClosed !== null ? !noticeClosed : true
+    );
 
     return show ? (
         <div className="notice">
@@ -16,7 +19,10 @@ const AppNotice = () => {
                 </p>
                 <button
                     className="notice__close-button"
-                    onClick={() => setShow(false)}
+                    onClick={() => {
+                        setShow(false);
+                        localStorage.setItem('noticeClosed', true);
+                    }}
                 >
                     <img src={closeImage} alt="Close notice" />
                 </button>

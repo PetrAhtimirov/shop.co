@@ -1,0 +1,29 @@
+.clothes-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.clothes-card__link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.clothes-card__image {
+    width: 295px;
+    height: 298px;
+    object-fit:cover;
+    border-radius: 20px;
+}
+
+.clothes-card__title {
+    font-size: 1.25em;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.clothes-card__price {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: 8px;
+    margin-bottom: 0;
+}

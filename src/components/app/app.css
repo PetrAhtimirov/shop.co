@@ -18,6 +18,14 @@
 @font-face {
   font-family: 'Satoshi';
   font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../../resources/fonts/satoshi/Satoshi-Medium.woff2") format("woff2"),
+       url("../../resources/fonts/satoshi/Satoshi-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: 'Satoshi';
+  font-style: normal;
   font-weight: 700;
   font-display: swap;
   src: url("../../resources/fonts/satoshi/Satoshi-Bold.woff2") format("woff2"),

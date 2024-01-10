@@ -6,6 +6,8 @@ import starImage from '../../resources/icons/star.svg';
 const MainBanner = () => {
     return (
         <section className="banner">
+            <img className="banner__image-decor-1" src={starImage} alt="" />
+            <img className="banner__image-decor-2" src={starImage} alt="" />
             <div className="container">
                 <h2 className="banner__title">
                     Find clothes that matches your style
@@ -35,8 +37,6 @@ const MainBanner = () => {
                     </div>
                 </div>
             </div>
-            <img className="banner__image-decor-1" src={starImage} alt="" />
-            <img className="banner__image-decor-2" src={starImage} alt="" />
         </section>
     );
 };

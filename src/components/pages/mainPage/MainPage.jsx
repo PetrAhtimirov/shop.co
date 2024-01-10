@@ -2,6 +2,7 @@ import AppNotice from '../../appNotice/AppNotice';
 import AppHeader from '../../appHeader/AppHeader';
 import MainBanner from '../../mainBanner/MainBanner';
 import RunningBrands from '../../runningBrands/RunningBrands';
+import MainClothesList from '../../mainClothesList/MainClothesList';
 
 import './mainPage.css';
 const MainPage = () => {
@@ -11,6 +12,7 @@ const MainPage = () => {
             <AppHeader />
             <MainBanner />
             <RunningBrands />
+            <MainClothesList />
         </>
     );
 };
