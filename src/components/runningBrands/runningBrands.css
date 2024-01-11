@@ -5,6 +5,7 @@
     overflow: hidden;
     display: flex;
     align-items: center;
+    margin-bottom: 16px;
 }
 
 .brands__inner {

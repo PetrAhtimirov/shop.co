@@ -3,6 +3,7 @@ import AppHeader from '../../appHeader/AppHeader';
 import MainBanner from '../../mainBanner/MainBanner';
 import RunningBrands from '../../runningBrands/RunningBrands';
 import MainClothesList from '../../mainClothesList/MainClothesList';
+import MainDressStyles from '../../mainDressStyles/MainDressStyles';
 
 import './mainPage.css';
 const MainPage = () => {
@@ -12,7 +13,12 @@ const MainPage = () => {
             <AppHeader />
             <MainBanner />
             <RunningBrands />
-            <MainClothesList />
+            <MainClothesList title="New Arrivals" />
+            <div className="container">
+                <hr className="main__lists-hr" />
+            </div>
+            <MainClothesList title="Top selling" />
+            <MainDressStyles />
         </>
     );
 };
