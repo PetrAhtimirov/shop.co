@@ -1,5 +1,5 @@
 .main-dress-styles {
-    padding: 16px 0;
+    margin-top: 16px;
 }
 
 .main-dress-styles__inner {
@@ -62,7 +62,7 @@
 
 .dress-styles__tile.gym {
     background-image:  url('./images/gym.png');
-    background-position: 83px -135px;
+    background-position: 83px -136px;
     background-size: 102%;
 }
 

@@ -4,6 +4,7 @@ import MainBanner from '../../mainBanner/MainBanner';
 import RunningBrands from '../../runningBrands/RunningBrands';
 import MainClothesList from '../../mainClothesList/MainClothesList';
 import MainDressStyles from '../../mainDressStyles/MainDressStyles';
+import MainCommentsList from '../../mainCommentsList/MainCommentsList';
 
 import './mainPage.css';
 const MainPage = () => {
@@ -19,6 +20,7 @@ const MainPage = () => {
             </div>
             <MainClothesList title="Top selling" />
             <MainDressStyles />
+            <MainCommentsList />
         </>
     );
 };
