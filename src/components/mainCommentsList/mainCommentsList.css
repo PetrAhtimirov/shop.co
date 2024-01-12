@@ -2,7 +2,33 @@
     padding: 80px 0;
 }
 
+.main-comments__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .main-comments__title {
     font-family: Integral CF;
     font-size: 3em;
+    margin-bottom: 40px;
+}
+
+.main-comments__triggers {
+    display: flex;
+    gap: 16px;
+}
+
+.main-comments__triggers > button {
+    border: none;
+    background-color: inherit;
+}
+
+.main-comments__inner {
+    display: flex;
+    gap: 20px;
+}
+
+.main-comments__card-wrapper {
+    width: 400px;
 }
