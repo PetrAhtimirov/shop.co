@@ -1,0 +1,89 @@
+.footer-wrapper {
+    background-color: #F0F0F0;
+    margin-top: 90px;
+}
+
+.footer-container {
+    position: relative;
+    top: -90px;
+}
+
+footer {
+    margin-top: 50px;
+}
+
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.footer__logo {
+    font-family: 'Integral CF';
+    font-size: 2.09em;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.footer__desc {
+    color: rgba(0, 0, 0, 0.60);
+    font-size: 0.875em;
+    line-height: 1.57em;
+    width: 248px;
+}
+
+.footer__item-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__item-nav > h3 {
+    font-weight: 500;
+    line-height: 1.125em;
+    letter-spacing: 0.1875em;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 26px;
+}
+
+.footer__item-nav > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: rgba(0, 0, 0, 0.60);
+    line-height: 1.1875em;
+}
+
+.footer__item-nav > ul > li {
+    margin-bottom: 1.1875em;
+}
+
+.footer__item-nav > ul > li > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer__hr {
+    background-color: #00000010;
+    height: 1px;
+    border: none;
+}
+
+.footer-other {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__mark {
+    margin: 0;
+    color: rgba(0, 0, 0, 0.60);
+    font-size: 0.875;
+}
+
+.footer__payment {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}

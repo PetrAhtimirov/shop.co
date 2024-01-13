@@ -5,6 +5,7 @@ import RunningBrands from '../../runningBrands/RunningBrands';
 import MainClothesList from '../../mainClothesList/MainClothesList';
 import MainDressStyles from '../../mainDressStyles/MainDressStyles';
 import MainCommentsList from '../../mainCommentsList/MainCommentsList';
+import AppFooter from '../../appFooter/AppFooter';
 
 import './mainPage.css';
 const MainPage = () => {
@@ -21,6 +22,7 @@ const MainPage = () => {
             <MainClothesList title="Top selling" />
             <MainDressStyles />
             <MainCommentsList />
+            <AppFooter />
         </>
     );
 };
