@@ -1,5 +1,6 @@
 .main-comments {
     padding: 80px 0;
+    overflow: hidden;
 }
 
 .main-comments__header {
@@ -22,13 +23,19 @@
 .main-comments__triggers > button {
     border: none;
     background-color: inherit;
+    transition: .3s;
+}
+
+.main-comments__triggers > button:disabled {
+    filter: opacity(40%);
 }
 
 .main-comments__inner {
     display: flex;
     gap: 20px;
+    transition: .6s;
 }
 
 .main-comments__card-wrapper {
-    width: 400px;
+    min-width: 400px;
 }

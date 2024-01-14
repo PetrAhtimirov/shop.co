@@ -21,7 +21,7 @@ const RunningBrands = () => {
     const renderImages = images.map((obj, i) => {
         const [key, image] = Object.entries(obj)[0];
         return (
-            <Link key={i} to="#">
+            <Link key={i} to="#" tabIndex="-1">
                 <img className="brand-image" src={image} alt={key} />
             </Link>
         );
