@@ -41,6 +41,12 @@
 .multi-range-slider {
     border: none;
     box-shadow: none;
+    padding-top: 25px;
+    padding-bottom: 30px;
+}
+
+.multi-range-slider .bar {
+    height: 7px;
 }
 
 .multi-range-slider .bar-left,  
@@ -53,9 +59,7 @@
     border: none;
     background-color: #000;
     box-shadow: none;
-    width: 25px;
-    height: 25px;
-    top: -1px;
+    top: 2px;
 }
 
 .multi-range-slider .caption {
@@ -70,9 +74,53 @@
     color: black;
     box-shadow: none;
     display: flex;
+    font-size: 1em;
 }
 
 .multi-range-slider .thumb .caption *::before {
     content: "$";
     display: block;
+}
+
+.filters__sizes {
+    padding: 0;
+    margin: 20px 0 0 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filters__sizes input {
+    display: none;
+}
+
+.filters__sizes label {
+    padding: 10px 20px;
+    display: block;
+    border-radius: 62px;
+    background-color: #F0F0F0;
+    font-size: 0.875em;
+    color: #00000060;
+}
+
+.filters__dress-styles {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 20px 0 0 0;
+    padding: 0;
+    gap: 20px;
+}
+
+.filters__submit {
+    display: block;
+    border: none;
+    color: #fff;
+    background-color: #000;
+    padding: 16px 54px;
+    border-radius: 62px;
+    font-size: 0.875em;
+    margin: 34px auto 4px auto;
+    cursor: pointer;
 }
