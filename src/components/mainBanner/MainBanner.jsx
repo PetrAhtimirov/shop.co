@@ -17,7 +17,7 @@ const MainBanner = () => {
                     garments, designed to bring out your individuality and cater
                     to your sense of style.
                 </p>
-                <Link to="/" className="shop-link">
+                <Link to="/shop" className="shop-link">
                     Shop Now
                 </Link>
                 <div className="banner__stats">

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import './appHeader.css';
 import searchImage from '../../resources/icons/search.svg';
@@ -15,16 +15,16 @@ const AppHeader = () => {
                 <nav className="main-nav">
                     <ul className="main-nav__list">
                         <li className="main-nav__item">
-                            <Link to="#">Shop</Link>
+                            <NavLink to="/shop">Shop</NavLink>
                         </li>
                         <li className="main-nav__item">
-                            <Link to="#">On Sale</Link>
+                            <NavLink to="#">On Sale</NavLink>
                         </li>
                         <li className="main-nav__item">
-                            <Link to="#">New Arrivals</Link>
+                            <NavLink to="#">New Arrivals</NavLink>
                         </li>
                         <li className="main-nav__item">
-                            <Link to="#">Brands</Link>
+                            <NavLink to="#">Brands</NavLink>
                         </li>
                     </ul>
                 </nav>

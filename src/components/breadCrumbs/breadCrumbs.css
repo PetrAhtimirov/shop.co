@@ -1,0 +1,19 @@
+.breadcrumbs {
+    display:flex;
+    
+    padding: 24px 0;
+}
+
+.breadcrumbs__link {
+    color: rgba(0, 0, 0, 0.60);
+    text-decoration: none;
+}
+
+.breadcrumbs__link:last-child {
+    color: #000;
+}
+
+.breadcrumbs__arrow {
+    margin-left: 6px;
+    margin-right: 12px;
+}

@@ -1,9 +1,7 @@
-import { lazy } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { MainPage, ShopPage } from '../pages/index';
 
 import './app.css';
-
-const MainPage = lazy(() => import('../pages/mainPage/MainPage'));
 
 function App() {
     return (
@@ -11,6 +9,7 @@ function App() {
             <div className="app">
                 <Routes>
                     <Route path="/" element={<MainPage />} />
+                    <Route path="/shop" element={<ShopPage />} />
                 </Routes>
             </div>
         </Router>

@@ -32,6 +32,9 @@
        url("../../resources/fonts/satoshi/Satoshi-Bold.woff") format("woff");
 }
 
+body {
+  margin: 0;
+}
 
 .app {
   font-family: 'Satoshi', 'Arial', sans-serif;

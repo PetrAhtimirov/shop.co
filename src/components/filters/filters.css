@@ -1,0 +1,78 @@
+.filters {
+    padding: 20px 24px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    width: 247px;
+}
+
+.filters__title {
+    margin: 0;
+    font-size: 1.25em;
+}
+
+.filters__hr {
+    margin: 24px 0;
+    height: 1px;
+    border: none;
+    background-color: #00000010;
+}
+
+.filters__clothes-type {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filters__button {
+    background-color: inherit;
+    border: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+    color: #00000060;
+    cursor: pointer;
+}
+
+.multi-range-slider {
+    border: none;
+    box-shadow: none;
+}
+
+.multi-range-slider .bar-left,  
+.multi-range-slider .bar-right{
+    box-shadow: none;
+    background-color: #00000010;
+}
+
+.multi-range-slider .thumb::before {
+    border: none;
+    background-color: #000;
+    box-shadow: none;
+    width: 25px;
+    height: 25px;
+    top: -1px;
+}
+
+.multi-range-slider .caption {
+    display: flex;
+    bottom: auto;
+    top: 30px;
+    left: 0px;
+}
+
+.multi-range-slider .thumb .caption * {
+    background-color: inherit;
+    color: black;
+    box-shadow: none;
+    display: flex;
+}
+
+.multi-range-slider .thumb .caption *::before {
+    content: "$";
+    display: block;
+}
