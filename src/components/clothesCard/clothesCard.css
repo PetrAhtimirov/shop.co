@@ -6,6 +6,13 @@
 .clothes-card__link {
     text-decoration: none;
     color: inherit;
+    border-radius: 20px;
+    overflow: hidden;
+    padding-bottom: 5px;
+}
+
+.clothes-card__link:focus {
+    outline: 2px dashed #000;
 }
 
 .clothes-card__image {

@@ -37,11 +37,17 @@
     text-decoration: none;
     border-radius: 62px;
     margin-bottom: 48px;
-    transition: .2s;
+    outline: none;
+    transition: .22s;
 }
 
-.shop-link:active {
-    background-color: rgba(0,0,0, 0.6);
+.shop-link:hover {
+    background-color: rgba(0,0,0, 0.75);
+}
+
+.shop-link:focus {
+    background-color: rgba(0,0,0, 0.75);
+    outline: 2px dashed rgba(0,0,0, 0.75);
 }
 
 .banner__stats {

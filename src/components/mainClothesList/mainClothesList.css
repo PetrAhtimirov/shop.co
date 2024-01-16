@@ -27,4 +27,12 @@
     border-radius: 62px;
     border: 1px solid rgba(0, 0, 0, 0.10);
     margin: 36px auto 0 auto;
+    outline: none;
+    transition: .3s;
+}
+
+.main-clothes__link:hover,
+.main-clothes__link:focus {
+    border: 1px solid #00000020;
+    background-color: #f0f0f0;
 }

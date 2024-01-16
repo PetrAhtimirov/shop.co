@@ -4,7 +4,7 @@
     border: 1px solid rgba(0, 0, 0, 0.10);
     min-width: 247px;
     max-width: 247px;
-    margin-bottom: 64px;
+    height: fit-content;
 }
 
 .filters__title {
