@@ -4,3 +4,8 @@
     background-color: #00000010;
     margin: 0;
 }
+
+.shop-page__content {
+    display: flex;
+    gap: 20px;
+}

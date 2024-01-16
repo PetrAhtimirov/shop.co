@@ -1,0 +1,85 @@
+import ClothesCard from '../clothesCard/ClothesCard';
+
+import './shopList.css';
+import arrowLeftImage from './images/arrow-left.svg';
+import arrowRightImage from './images/arrow-right.svg';
+import clothesExample from '../../resources/images/clothesItem.png';
+
+const ShopList = () => {
+    return (
+        <section className="shop-list">
+            <div className="shop-list__header">
+                <h2 className="shop-list__title">Catalog</h2>
+                <div className="shop-list__info">
+                    <p className="shop-list__results">
+                        Showing 1-10 of 100 Products
+                    </p>
+                    <div className="shop-list__sort">Sort by:</div>
+                </div>
+            </div>
+            <div className="shop-list__inner">
+                <ClothesCard
+                    name="T-shirt with tape details"
+                    score={4.5}
+                    price="$120"
+                    preview={clothesExample}
+                    link="#"
+                />
+                <ClothesCard
+                    name="T-shirt with tape details"
+                    score={4.5}
+                    price="$120"
+                    preview={clothesExample}
+                    link="#"
+                />
+                <ClothesCard
+                    name="T-shirt with tape details"
+                    score={4.5}
+                    price="$120"
+                    preview={clothesExample}
+                    link="#"
+                />
+                <ClothesCard
+                    name="T-shirt with tape details"
+                    score={4.5}
+                    price="$120"
+                    preview={clothesExample}
+                    link="#"
+                />
+                <ClothesCard
+                    name="T-shirt with tape details"
+                    score={4.5}
+                    price="$120"
+                    preview={clothesExample}
+                    link="#"
+                />
+                <ClothesCard
+                    name="T-shirt with tape details"
+                    score={4.5}
+                    price="$120"
+                    preview={clothesExample}
+                    link="#"
+                />
+            </div>
+            <hr className="shop-list__hr" />
+            <div className="shop-list__triggers">
+                <button className="shop-list__left-trigger">
+                    <img src={arrowLeftImage} alt="" />
+                    Previous
+                </button>
+                <div className="shop-list__pages-triggers">
+                    <button className="active">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                </div>
+                <button className="shop-list__right-trigger">
+                    Next
+                    <img src={arrowRightImage} alt="" />
+                </button>
+            </div>
+        </section>
+    );
+};
+
+export default ShopList;

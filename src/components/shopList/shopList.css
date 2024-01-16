@@ -1,0 +1,71 @@
+.shop-list {
+    flex-grow: 1;
+}
+
+.shop-list__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shop-list__title {
+    font-size: 2em;
+    margin: 0;
+}
+
+.shop-list__info {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    color: #00000060;
+}
+
+.shop-list__inner {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 19px;
+    row-gap: 36px;
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+
+.shop-list__hr {
+    height: 1px;
+    border: none;
+    background-color: #00000010;
+    margin: 0;
+}
+
+.shop-list__triggers {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 82px;
+}
+
+.shop-list__triggers button {
+    border-radius: 8px;
+    background: inherit;
+    padding: 8px 14px;
+    cursor: pointer;
+}
+
+.shop-list__left-trigger,
+.shop-list__right-trigger {
+    border: 1px solid #00000010;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.shop-list__pages-triggers button {
+    border: none;
+    padding: 10px 12px;
+    color: #00000050;
+}
+
+.shop-list__pages-triggers > .active {
+    background-color: #00000006;
+    color: #000;
+}

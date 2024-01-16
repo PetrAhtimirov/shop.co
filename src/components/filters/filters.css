@@ -2,7 +2,9 @@
     padding: 20px 24px;
     border-radius: 20px;
     border: 1px solid rgba(0, 0, 0, 0.10);
-    width: 247px;
+    min-width: 247px;
+    max-width: 247px;
+    margin-bottom: 64px;
 }
 
 .filters__title {

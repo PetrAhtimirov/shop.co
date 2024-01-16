@@ -2,6 +2,8 @@ import AppHeader from '../../appHeader/AppHeader';
 import AppNotice from '../../appNotice/AppNotice';
 import BreadCrumbs from '../../breadCrumbs/BreadCrumbs';
 import Filters from '../../filters/Filters';
+import ShopList from '../../shopList/ShopList';
+import AppFooter from '../../appFooter/AppFooter';
 
 import './shopPage.css';
 
@@ -13,8 +15,12 @@ const ShopPage = () => {
             <div className="container">
                 <hr className="header-hr" />
                 <BreadCrumbs />
-                <Filters />
+                <div className="shop-page__content">
+                    <Filters />
+                    <ShopList />
+                </div>
             </div>
+            <AppFooter />
         </>
     );
 };
