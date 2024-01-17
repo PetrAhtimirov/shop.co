@@ -9,10 +9,19 @@
     border-radius: 20px;
     overflow: hidden;
     padding-bottom: 5px;
+    transition: .2s;
+}
+
+.clothes-card__link:hover .clothes-card__image {
+    filter: brightness(1.05) grayscale(10%);
 }
 
 .clothes-card__link:focus {
     outline: 2px dashed #000;
+}
+
+.clothes-card__link:active {
+    outline: none;
 }
 
 .clothes-card__image {
@@ -20,6 +29,7 @@
     height: 298px;
     object-fit:cover;
     border-radius: 20px;
+    transition: .3s;
 }
 
 .clothes-card__title {

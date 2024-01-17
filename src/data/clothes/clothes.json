@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "name": "T-shirt with tape details",
+        "score": 4.5,
+        "price": "$120",
+        "preview": "clothes/images/1.png",
+        "sells": 100,
+        "discount": null,
+        "discount-price": null,
+        "new": false
+    },
+    {
+        "id": 2,
+        "name": "Skinny Fit Jeans",
+        "score": 3.5,
+        "price": "$260",
+        "preview": "clothes/images/2.png",
+        "sells": 40,
+        "discount": "20%",
+        "discount-price": "$240",
+        "new": false
+    }
+]

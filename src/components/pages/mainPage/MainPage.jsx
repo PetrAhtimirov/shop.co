@@ -15,7 +15,7 @@ const MainPage = () => {
             <AppHeader />
             <MainBanner />
             <RunningBrands />
-            <MainClothesList title="New Arrivals" />
+            <MainClothesList title="New Arrivals" newArrivals />
             <div className="container">
                 <hr className="main__lists-hr" />
             </div>
