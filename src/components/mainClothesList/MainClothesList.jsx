@@ -6,13 +6,28 @@ import useClothesService from '../../services/ClothesService';
 
 import './mainClothesList.css';
 
-const MainClothesList = ({ title, newArrivals = false }) => {
+const MainClothesList = ({
+    title,
+    newArrivals = false,
+    topSelling = false,
+}) => {
     const [clothesList, setClothesList] = useState([]);
 
-    const { getNewArrivals } = useClothesService();
+    const { getSortedByDateClothes, getSortedBySellsClothes } =
+        useClothesService();
 
     useEffect(() => {
-        getNewArrivals().then(setClothesList);
+        if (newArrivals) {
+            getSortedByDateClothes().then((data) =>
+                setClothesList(data.slice(0, 4))
+            );
+        }
+
+        if (topSelling) {
+            getSortedBySellsClothes().then((data) =>
+                setClothesList(data.slice(0, 4))
+            );
+        }
     }, []);
 
     const clothes = clothesList.map(({ id, name, score, price, preview }) => (

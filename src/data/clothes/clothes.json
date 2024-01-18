@@ -8,7 +8,7 @@
         "sells": 100,
         "discount": null,
         "discount-price": null,
-        "new": true
+        "date": "2024-01-02"
     },
     {
         "id": 2,
@@ -19,7 +19,7 @@
         "sells": 40,
         "discount": "20%",
         "discount-price": "$240",
-        "new": false
+        "date": "2024-01-02"
     },
     {
         "id": 3,
@@ -30,7 +30,7 @@
         "sells": 50,
         "discount": null,
         "discount-price": null,
-        "new": false
+        "date": "2024-01-01"
     },
     {
         "id": 4,
@@ -41,6 +41,6 @@
         "sells": 80,
         "discount": null,
         "discount-price": null,
-        "new": false
+        "date": "2024-01-01"
     }
 ]

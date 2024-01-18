@@ -1,21 +1,36 @@
-import data from '../data/clothes/clothes.json';
+// import data from '../data/clothes/clothes.json';
 
 const useClothesService = () => {
     const getFilteredClothes = async (from, to) => {
-        return await data.slice(from, to);
+        const data = await require('../data/clothes/clothes.json');
+        return data.slice(from, to);
     };
 
-    const getNewArrivals = async () => {
-        return await data
-            .filter((item) => {
-                if (item.new) {
-                    return item;
-                }
+    const getSortedByDateClothes = async (from = 0, to = 9) => {
+        const data = await require('../data/clothes/clothes.json');
+        return data
+            .sort((a, b) => {
+                const aDate = new Date(a.date);
+                const bDate = new Date(b.date);
+                return bDate - aDate;
             })
-            .slice(-5);
+            .slice(from, to);
     };
 
-    return { getFilteredClothes, getNewArrivals };
+    const getSortedBySellsClothes = async (from = 0, to = 9) => {
+        const data = await require('../data/clothes/clothes.json');
+        return data
+            .sort((a, b) => {
+                return b.sells - a.sells;
+            })
+            .slice(from, to);
+    };
+
+    return {
+        getFilteredClothes,
+        getSortedByDateClothes,
+        getSortedBySellsClothes,
+    };
 };
 
 export default useClothesService;
