@@ -6,15 +6,24 @@ import useClothesService from '../../services/ClothesService';
 import './shopList.css';
 import arrowLeftImage from './images/arrow-left.svg';
 import arrowRightImage from './images/arrow-right.svg';
+import arrowBottomImage from './images/arrow-bottom.svg';
 
 const ShopList = () => {
     const [clothesList, setClothesList] = useState([]);
+    const [sortType, setSortType] = useState('Most Popular');
 
-    const { getFilteredClothes } = useClothesService();
+    const { getSortedByDateClothes, getSortedBySellsClothes } =
+        useClothesService();
 
     useEffect(() => {
-        getFilteredClothes().then(setClothesList);
-    }, []);
+        if (sortType === 'Most Popular') {
+            getSortedBySellsClothes(sortType).then(setClothesList);
+        }
+
+        if (sortType === 'New') {
+            getSortedByDateClothes(sortType).then(setClothesList);
+        }
+    }, [sortType]);
 
     const clothes = clothesList.map(
         ({ id, name, score, price, discount, discountPrice, preview }) => (
@@ -39,7 +48,31 @@ const ShopList = () => {
                     <p className="shop-list__results">
                         Showing 1-10 of 100 Products
                     </p>
-                    <div className="shop-list__sort">Sort by:</div>
+                    <div className="shop-list__sort">
+                        Sort by:{' '}
+                        <button className="shop-list__sort-button">
+                            {sortType}
+                            <img src={arrowBottomImage} alt="arrow bottom" />
+                        </button>
+                        <ul className="shop-list__sort__dropdown">
+                            <li>
+                                <button
+                                    className="shop-list__sort__dropdown-button"
+                                    onClick={() => setSortType('Most Popular')}
+                                >
+                                    Most Popular
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    className="shop-list__sort__dropdown-button"
+                                    onClick={() => setSortType('New')}
+                                >
+                                    New
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div className="shop-list__inner">{clothes}</div>

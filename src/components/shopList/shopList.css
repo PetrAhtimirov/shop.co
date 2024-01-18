@@ -21,6 +21,67 @@
     color: #00000060;
 }
 
+.shop-list__results {
+    margin: 0;
+}
+
+.shop-list__sort:hover .shop-list__sort__dropdown {
+    visibility: visible;
+    opacity: 1;
+}
+
+.shop-list__sort-button {
+    border: none;
+    background-color: inherit;
+    color: #000;
+    font-size: 1em;
+    padding: 0 0;
+    align-items: center;
+    cursor: pointer;
+}
+
+.shop-list__sort-button > img {
+    margin-left: 4px;
+    position: relative;
+    top: 2px;
+}
+
+.shop-list__sort__dropdown {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    visibility: hidden;
+    opacity: 0;
+    transition:visibility 0.2s linear,opacity 0.2s linear;
+}
+
+.shop-list__sort__dropdown-button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    height: 100%;
+    width: 100%;
+    padding: 6px 14px;
+    font-size: 1em;
+    text-align: start;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.shop-list__sort__dropdown-button:hover {
+    color: #00000060;
+}
+
 .shop-list__inner {
     display: flex;
     flex-wrap: wrap;
