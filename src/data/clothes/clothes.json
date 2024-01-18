@@ -8,7 +8,7 @@
         "sells": 100,
         "discount": null,
         "discount-price": null,
-        "new": false
+        "new": true
     },
     {
         "id": 2,
@@ -19,6 +19,28 @@
         "sells": 40,
         "discount": "20%",
         "discount-price": "$240",
+        "new": false
+    },
+    {
+        "id": 3,
+        "name": "Gradient Graphic T-shirt",
+        "score": 3.5,
+        "price": "$145",
+        "preview": "clothes/images/3.png",
+        "sells": 50,
+        "discount": null,
+        "discount-price": null,
+        "new": false
+    },
+    {
+        "id": 4,
+        "name": "Polo with Tipping Details",
+        "score": 4.5,
+        "price": "$180",
+        "preview": "clothes/images/4.png",
+        "sells": 80,
+        "discount": null,
+        "discount-price": null,
         "new": false
     }
 ]

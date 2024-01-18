@@ -6,7 +6,13 @@ const useClothesService = () => {
     };
 
     const getNewArrivals = async () => {
-        return await data;
+        return await data
+            .filter((item) => {
+                if (item.new) {
+                    return item;
+                }
+            })
+            .slice(-5);
     };
 
     return { getFilteredClothes, getNewArrivals };

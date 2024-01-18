@@ -21,7 +21,7 @@ const MainClothesList = ({ title, newArrivals = false }) => {
             name={name}
             score={score}
             price={price}
-            preview={'../../data/' + preview}
+            preview={require('../../data/' + preview)}
             link="#"
         />
     ));

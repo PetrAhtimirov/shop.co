@@ -13,7 +13,7 @@
 }
 
 .clothes-card__link:hover .clothes-card__image {
-    filter: brightness(1.05) grayscale(10%);
+    filter: brightness(1.05);
 }
 
 .clothes-card__link:focus {
