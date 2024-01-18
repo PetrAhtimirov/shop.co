@@ -8,18 +8,18 @@
         "sells": 100,
         "discount": null,
         "discountPrice": null,
-        "date": "2024-01-02"
+        "date": "2024-01-03"
     },
     {
         "id": 2,
         "name": "Skinny Fit Jeans",
         "score": 3.5,
-        "price": "$260",
+        "price": "$240",
         "preview": "clothes/images/2.png",
         "sells": 40,
-        "discount": "20%",
-        "discountPrice": "$240",
-        "date": "2024-01-02"
+        "discount": "10%",
+        "discountPrice": "$260",
+        "date": "2024-01-03"
     },
     {
         "id": 3,
@@ -47,11 +47,11 @@
         "id": 5,
         "name": "Black Striped T-shirt",
         "score": 5,
-        "price": "$150",
+        "price": "$120",
         "preview": "clothes/images/5.png",
         "sells": 30,
         "discount": "30%",
-        "discountPrice": "$120",
+        "discountPrice": "$150",
         "date": "2024-01-01"
     },
     {
@@ -60,31 +60,31 @@
         "score": 4.5,
         "price": "$180",
         "preview": "clothes/images/6.png",
-        "sells": 150,
+        "sells": 50,
         "discount": null,
         "discountPrice": null,
-        "date": "2024-01-01"
+        "date": "2024-01-02"
     },
     {
         "id": 7,
         "name": "Sleeve Striped T-shirt",
         "score": 4.5,
-        "price": "$160",
+        "price": "$130",
         "preview": "clothes/images/7.png",
         "sells": 70,
         "discount": "30%",
         "discountPrice": "$160",
-        "date": "2024-01-01"
+        "date": "2024-01-02"
     },
     {
         "id": 8,
         "name": "Vertical Stripped Shirt",
         "score": 5,
-        "price": "$232",
+        "price": "$212",
         "preview": "clothes/images/8.png",
-        "sells": 20,
+        "sells": 220,
         "discount": "10%",
-        "discountPrice": "$212",
+        "discountPrice": "$232",
         "date": "2024-01-01"
     },
     {
@@ -104,7 +104,18 @@
         "score": 3,
         "price": "$80",
         "preview": "clothes/images/10.png",
-        "sells": 25,
+        "sells": 105,
+        "discount": null,
+        "discountPrice": null,
+        "date": "2024-01-01"
+    },
+    {
+        "id": 11,
+        "name": "Faded Skinny Jeans",
+        "score": 4.5,
+        "price": "$210",
+        "preview": "clothes/images/11.png",
+        "sells": 105,
         "discount": null,
         "discountPrice": null,
         "date": "2024-01-01"

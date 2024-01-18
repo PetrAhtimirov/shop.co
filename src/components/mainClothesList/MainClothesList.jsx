@@ -5,6 +5,7 @@ import ClothesCard from '../clothesCard/ClothesCard';
 import useClothesService from '../../services/ClothesService';
 
 import './mainClothesList.css';
+import leftArrowImage from './images/arrow-left.svg';
 
 const MainClothesList = ({
     title,
@@ -50,7 +51,12 @@ const MainClothesList = ({
             <h2 className="main-clothes__title">{title}</h2>
             <div className="container main-clothes__list">{clothes}</div>
             <Link to="#" className="main-clothes__link">
-                View All
+                <span>View All</span>
+                <img
+                    className="main-clothes__link__arrow"
+                    src={leftArrowImage}
+                    alt="Left arrow"
+                />
             </Link>
         </section>
     );
