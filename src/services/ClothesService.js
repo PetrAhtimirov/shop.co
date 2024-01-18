@@ -1,7 +1,5 @@
-// import data from '../data/clothes/clothes.json';
-
 const useClothesService = () => {
-    const getFilteredClothes = async (from, to) => {
+    const getFilteredClothes = async (from = 0, to = 9) => {
         const data = await require('../data/clothes/clothes.json');
         return data.slice(from, to);
     };

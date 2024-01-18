@@ -1,11 +1,36 @@
+import { useState, useEffect } from 'react';
+
 import ClothesCard from '../clothesCard/ClothesCard';
+import useClothesService from '../../services/ClothesService';
 
 import './shopList.css';
 import arrowLeftImage from './images/arrow-left.svg';
 import arrowRightImage from './images/arrow-right.svg';
-import clothesExample from '../../resources/images/clothesItem.png';
 
 const ShopList = () => {
+    const [clothesList, setClothesList] = useState([]);
+
+    const { getFilteredClothes } = useClothesService();
+
+    useEffect(() => {
+        getFilteredClothes().then(setClothesList);
+    }, []);
+
+    const clothes = clothesList.map(
+        ({ id, name, score, price, discount, discountPrice, preview }) => (
+            <ClothesCard
+                key={id}
+                name={name}
+                score={score}
+                price={price}
+                discount={discount}
+                discountPrice={discountPrice}
+                preview={require('../../data/' + preview)}
+                link="#"
+            />
+        )
+    );
+
     return (
         <section className="shop-list">
             <div className="shop-list__header">
@@ -17,50 +42,7 @@ const ShopList = () => {
                     <div className="shop-list__sort">Sort by:</div>
                 </div>
             </div>
-            <div className="shop-list__inner">
-                <ClothesCard
-                    name="T-shirt with tape details"
-                    score={4.5}
-                    price="$120"
-                    preview={clothesExample}
-                    link="#"
-                />
-                <ClothesCard
-                    name="T-shirt with tape details"
-                    score={4.5}
-                    price="$120"
-                    preview={clothesExample}
-                    link="#"
-                />
-                <ClothesCard
-                    name="T-shirt with tape details"
-                    score={4.5}
-                    price="$120"
-                    preview={clothesExample}
-                    link="#"
-                />
-                <ClothesCard
-                    name="T-shirt with tape details"
-                    score={4.5}
-                    price="$120"
-                    preview={clothesExample}
-                    link="#"
-                />
-                <ClothesCard
-                    name="T-shirt with tape details"
-                    score={4.5}
-                    price="$120"
-                    preview={clothesExample}
-                    link="#"
-                />
-                <ClothesCard
-                    name="T-shirt with tape details"
-                    score={4.5}
-                    price="$120"
-                    preview={clothesExample}
-                    link="#"
-                />
-            </div>
+            <div className="shop-list__inner">{clothes}</div>
             <hr className="shop-list__hr" />
             <div className="shop-list__triggers">
                 <button className="shop-list__left-trigger">

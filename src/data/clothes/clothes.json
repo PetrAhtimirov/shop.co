@@ -7,7 +7,7 @@
         "preview": "clothes/images/1.png",
         "sells": 100,
         "discount": null,
-        "discount-price": null,
+        "discountPrice": null,
         "date": "2024-01-02"
     },
     {
@@ -18,7 +18,7 @@
         "preview": "clothes/images/2.png",
         "sells": 40,
         "discount": "20%",
-        "discount-price": "$240",
+        "discountPrice": "$240",
         "date": "2024-01-02"
     },
     {
@@ -29,7 +29,7 @@
         "preview": "clothes/images/3.png",
         "sells": 50,
         "discount": null,
-        "discount-price": null,
+        "discountPrice": null,
         "date": "2024-01-01"
     },
     {
@@ -40,7 +40,73 @@
         "preview": "clothes/images/4.png",
         "sells": 80,
         "discount": null,
-        "discount-price": null,
+        "discountPrice": null,
+        "date": "2024-01-01"
+    },
+    {
+        "id": 5,
+        "name": "Black Striped T-shirt",
+        "score": 5,
+        "price": "$150",
+        "preview": "clothes/images/5.png",
+        "sells": 30,
+        "discount": "30%",
+        "discountPrice": "$120",
+        "date": "2024-01-01"
+    },
+    {
+        "id": 6,
+        "name": "Checkered Shirt",
+        "score": 4.5,
+        "price": "$180",
+        "preview": "clothes/images/6.png",
+        "sells": 150,
+        "discount": null,
+        "discountPrice": null,
+        "date": "2024-01-01"
+    },
+    {
+        "id": 7,
+        "name": "Sleeve Striped T-shirt",
+        "score": 4.5,
+        "price": "$160",
+        "preview": "clothes/images/7.png",
+        "sells": 70,
+        "discount": "30%",
+        "discountPrice": "$160",
+        "date": "2024-01-01"
+    },
+    {
+        "id": 8,
+        "name": "Vertical Stripped Shirt",
+        "score": 5,
+        "price": "$232",
+        "preview": "clothes/images/8.png",
+        "sells": 20,
+        "discount": "10%",
+        "discountPrice": "$212",
+        "date": "2024-01-01"
+    },
+    {
+        "id": 9,
+        "name": "Courage Graphic T-shirt",
+        "score": 4,
+        "price": "$145",
+        "preview": "clothes/images/9.png",
+        "sells": 120,
+        "discount": null,
+        "discountPrice": null,
+        "date": "2024-01-01"
+    },
+    {
+        "id": 10,
+        "name": "Loose Fit Bermuda Shorts",
+        "score": 3,
+        "price": "$80",
+        "preview": "clothes/images/10.png",
+        "sells": 25,
+        "discount": null,
+        "discountPrice": null,
         "date": "2024-01-01"
     }
 ]

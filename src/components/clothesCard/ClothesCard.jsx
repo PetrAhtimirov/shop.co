@@ -3,7 +3,15 @@ import { Link } from 'react-router-dom';
 
 import './clothesCard.css';
 
-const ClothesCard = ({ name, score, price, preview, link }) => {
+const ClothesCard = ({
+    name,
+    score,
+    price,
+    discount,
+    discountPrice,
+    preview,
+    link,
+}) => {
     return (
         <Link className="clothes-card__link" to={link}>
             <div className="clothes-card">
@@ -14,7 +22,19 @@ const ClothesCard = ({ name, score, price, preview, link }) => {
                 />
                 <h3 className="clothes-card__title">{name}</h3>
                 <Rating score={score} showScoreNum />
-                <p className="clothes-card__price">{price}</p>
+                <p className="clothes-card__price">
+                    {price}
+                    {discount ? (
+                        <>
+                            <span className="clothes-card__discount-price">
+                                {discountPrice}
+                            </span>
+                            <span className="clothes-card__discount">
+                                -{discount}
+                            </span>
+                        </>
+                    ) : null}
+                </p>
             </div>
         </Link>
     );

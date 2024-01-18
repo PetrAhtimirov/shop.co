@@ -30,16 +30,20 @@ const MainClothesList = ({
         }
     }, []);
 
-    const clothes = clothesList.map(({ id, name, score, price, preview }) => (
-        <ClothesCard
-            key={id}
-            name={name}
-            score={score}
-            price={price}
-            preview={require('../../data/' + preview)}
-            link="#"
-        />
-    ));
+    const clothes = clothesList.map(
+        ({ id, name, score, price, discount, discountPrice, preview }) => (
+            <ClothesCard
+                key={id}
+                name={name}
+                score={score}
+                price={price}
+                discount={discount}
+                discountPrice={discountPrice}
+                preview={require('../../data/' + preview)}
+                link="#"
+            />
+        )
+    );
 
     return (
         <section className="main-clothes">
