@@ -7,24 +7,20 @@ import useClothesService from '../../services/ClothesService';
 import './mainClothesList.css';
 import leftArrowImage from './images/arrow-left.svg';
 
-const MainClothesList = ({
-    title,
-    newArrivals = false,
-    topSelling = false,
-}) => {
+const MainClothesList = ({ title }) => {
     const [clothesList, setClothesList] = useState([]);
 
     const { getSortedByDateClothes, getSortedBySellsClothes } =
         useClothesService();
 
     useEffect(() => {
-        if (newArrivals) {
+        if (title === 'New Arrivals') {
             getSortedByDateClothes().then((data) =>
                 setClothesList(data.slice(0, 4))
             );
         }
 
-        if (topSelling) {
+        if (title === 'Top selling') {
             getSortedBySellsClothes().then((data) =>
                 setClothesList(data.slice(0, 4))
             );
@@ -46,11 +42,18 @@ const MainClothesList = ({
         )
     );
 
+    const link =
+        title === 'New Arrivals'
+            ? '/shop?sort=New'
+            : title === 'Top Selling'
+            ? '/shop?sort=Most+Popular'
+            : '#';
+
     return (
         <section className="main-clothes">
             <h2 className="main-clothes__title">{title}</h2>
             <div className="container main-clothes__list">{clothes}</div>
-            <Link to="#" className="main-clothes__link">
+            <Link to={link} className="main-clothes__link">
                 <span>View All</span>
                 <img
                     className="main-clothes__link__arrow"

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 import ClothesCard from '../clothesCard/ClothesCard';
 import useClothesService from '../../services/ClothesService';
@@ -9,21 +10,22 @@ import arrowRightImage from './images/arrow-right.svg';
 import arrowBottomImage from './images/arrow-bottom.svg';
 
 const ShopList = () => {
+    let [searchParams, setSearchParams] = useSearchParams();
+    console.log('render');
+    const urlSort = searchParams.get('sort') || 'Most Popular';
+    const urlFilter = {
+        ...(searchParams.get('type') ? { type: searchParams.get('type') } : {}),
+        ...(searchParams.get('style')
+            ? { style: searchParams.get('style') }
+            : {}),
+    };
     const [clothesList, setClothesList] = useState([]);
-    const [sortType, setSortType] = useState('Most Popular');
 
-    const { getSortedByDateClothes, getSortedBySellsClothes } =
-        useClothesService();
+    const { getClothes } = useClothesService();
 
     useEffect(() => {
-        if (sortType === 'Most Popular') {
-            getSortedBySellsClothes(sortType).then(setClothesList);
-        }
-
-        if (sortType === 'New') {
-            getSortedByDateClothes(sortType).then(setClothesList);
-        }
-    }, [sortType]);
+        getClothes(urlSort, urlFilter).then(setClothesList);
+    }, [setSearchParams]);
 
     const clothes = clothesList.map(
         ({ id, name, score, price, discount, discountPrice, preview }) => (
@@ -51,14 +53,19 @@ const ShopList = () => {
                     <div className="shop-list__sort">
                         Sort by:{' '}
                         <button className="shop-list__sort-button">
-                            {sortType}
+                            {urlSort}
                             <img src={arrowBottomImage} alt="arrow bottom" />
                         </button>
                         <ul className="shop-list__sort__dropdown">
                             <li>
                                 <button
                                     className="shop-list__sort__dropdown-button"
-                                    onClick={() => setSortType('Most Popular')}
+                                    onClick={() =>
+                                        setSearchParams({
+                                            sort: 'Most Popular',
+                                            ...urlFilter,
+                                        })
+                                    }
                                 >
                                     Most Popular
                                 </button>
@@ -66,7 +73,12 @@ const ShopList = () => {
                             <li>
                                 <button
                                     className="shop-list__sort__dropdown-button"
-                                    onClick={() => setSortType('New')}
+                                    onClick={() =>
+                                        setSearchParams({
+                                            sort: 'New',
+                                            ...urlFilter,
+                                        })
+                                    }
                                 >
                                     New
                                 </button>

@@ -15,11 +15,11 @@ const MainPage = () => {
             <AppHeader />
             <MainBanner />
             <RunningBrands />
-            <MainClothesList title="New Arrivals" newArrivals />
+            <MainClothesList title="New Arrivals" />
             <div className="container">
                 <hr className="main__lists-hr" />
             </div>
-            <MainClothesList title="Top selling" topSelling />
+            <MainClothesList title="Top selling" />
             <MainDressStyles />
             <MainCommentsList />
             <AppFooter />
