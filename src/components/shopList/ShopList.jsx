@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
 
 import ClothesCard from '../clothesCard/ClothesCard';
 import useClothesService from '../../services/ClothesService';
@@ -9,23 +8,14 @@ import arrowLeftImage from './images/arrow-left.svg';
 import arrowRightImage from './images/arrow-right.svg';
 import arrowBottomImage from './images/arrow-bottom.svg';
 
-const ShopList = () => {
-    let [searchParams, setSearchParams] = useSearchParams();
-    console.log('render');
-    const urlSort = searchParams.get('sort') || 'Most Popular';
-    const urlFilter = {
-        ...(searchParams.get('type') ? { type: searchParams.get('type') } : {}),
-        ...(searchParams.get('style')
-            ? { style: searchParams.get('style') }
-            : {}),
-    };
+const ShopList = ({ sort, filter, appendSearchParam }) => {
     const [clothesList, setClothesList] = useState([]);
 
     const { getClothes } = useClothesService();
 
     useEffect(() => {
-        getClothes(urlSort, urlFilter).then(setClothesList);
-    }, [setSearchParams]);
+        getClothes(sort, filter).then(setClothesList);
+    }, [appendSearchParam]);
 
     const clothes = clothesList.map(
         ({ id, name, score, price, discount, discountPrice, preview }) => (
@@ -53,7 +43,7 @@ const ShopList = () => {
                     <div className="shop-list__sort">
                         Sort by:{' '}
                         <button className="shop-list__sort-button">
-                            {urlSort}
+                            {sort}
                             <img src={arrowBottomImage} alt="arrow bottom" />
                         </button>
                         <ul className="shop-list__sort__dropdown">
@@ -61,9 +51,8 @@ const ShopList = () => {
                                 <button
                                     className="shop-list__sort__dropdown-button"
                                     onClick={() =>
-                                        setSearchParams({
+                                        appendSearchParam({
                                             sort: 'Most Popular',
-                                            ...urlFilter,
                                         })
                                     }
                                 >
@@ -74,9 +63,8 @@ const ShopList = () => {
                                 <button
                                     className="shop-list__sort__dropdown-button"
                                     onClick={() =>
-                                        setSearchParams({
+                                        appendSearchParam({
                                             sort: 'New',
-                                            ...urlFilter,
                                         })
                                     }
                                 >

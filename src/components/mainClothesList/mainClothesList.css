@@ -51,9 +51,13 @@
     height: 20px;
 }
 
-.main-clothes__link:hover,
-.main-clothes__link:focus {
+.main-clothes__link:hover {
     border: 1px solid #00000020;
+    background-color: #f0f0f0;
+}
+
+.main-clothes__link:focus {
+    border: 1px solid #000000;
     background-color: #f0f0f0;
 }
 

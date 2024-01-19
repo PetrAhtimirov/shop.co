@@ -1,40 +1,69 @@
 import MultiRangeSlider from 'multi-range-slider-react';
-
 import './filters.css';
 import rightArrowImage from './images/right-arrow.svg';
 
-const Filters = () => {
+const Filters = ({ filter, appendSearchParam }) => {
     return (
         <form className="filters">
             <h2 className="filters__title">Filters</h2>
             <hr className="filters__hr" />
             <ul className="filters__clothes-type">
                 <li>
-                    <button className="filters__button">
+                    <button
+                        className="filters__button"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            appendSearchParam({ type: 'T-shirt' });
+                        }}
+                    >
                         T-shirts
                         <img src={rightArrowImage} alt="follow filter" />
                     </button>
                 </li>
                 <li>
-                    <button className="filters__button">
+                    <button
+                        className="filters__button"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            appendSearchParam({ type: 'Shorts' });
+                        }}
+                    >
                         Shorts
                         <img src={rightArrowImage} alt="follow filter" />
                     </button>
                 </li>
                 <li>
-                    <button className="filters__button">
+                    <button
+                        className="filters__button"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            appendSearchParam({ type: 'Shirt' });
+                        }}
+                    >
                         Shirts
                         <img src={rightArrowImage} alt="follow filter" />
                     </button>
                 </li>
                 <li>
-                    <button className="filters__button">
+                    <button
+                        className="filters__button"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            appendSearchParam({ type: 'Hoodie' });
+                        }}
+                    >
                         Hoodie
                         <img src={rightArrowImage} alt="follow filter" />
                     </button>
                 </li>
                 <li>
-                    <button className="filters__button">
+                    <button
+                        className="filters__button"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            appendSearchParam({ type: 'Jeans' });
+                        }}
+                    >
                         Jeans
                         <img src={rightArrowImage} alt="follow filter" />
                     </button>

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import './mainDressStyles.css';
+import arrowRightImage from './images/arrow-right.svg';
 
 const MainDressStyles = () => {
     return (
@@ -16,24 +17,44 @@ const MainDressStyles = () => {
                             className="dress-styles__tile casual"
                         >
                             <h3 className="dress-style__title">Casual</h3>
+                            <img
+                                className="dress-style__link-effect"
+                                src={arrowRightImage}
+                                alt="arrow right"
+                            />
                         </Link>
                         <Link
                             to="/shop?style=Formal"
                             className="dress-styles__tile formal"
                         >
                             <h3 className="dress-style__title">Formal</h3>
+                            <img
+                                className="dress-style__link-effect"
+                                src={arrowRightImage}
+                                alt="arrow right"
+                            />
                         </Link>
                         <Link
                             to="/shop?style=Party"
                             className="dress-styles__tile party"
                         >
                             <h3 className="dress-style__title">Party</h3>
+                            <img
+                                className="dress-style__link-effect"
+                                src={arrowRightImage}
+                                alt="arrow right"
+                            />
                         </Link>
                         <Link
                             to="/shop?style=Gym"
                             className="dress-styles__tile gym"
                         >
                             <h3 className="dress-style__title">Gym</h3>
+                            <img
+                                className="dress-style__link-effect"
+                                src={arrowRightImage}
+                                alt="arrow right"
+                            />
                         </Link>
                     </div>
                 </div>

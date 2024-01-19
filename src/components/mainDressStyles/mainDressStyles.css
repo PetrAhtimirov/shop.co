@@ -26,12 +26,58 @@
 
 .dress-styles__tile {
     display: block;
+    position: relative;
     height: 289px;
     background-color: #fff;
     border-radius: 20px;
     text-decoration: none;
     color: inherit;
     background-repeat: no-repeat;
+    overflow: hidden;
+    outline: 1px solid transparent;
+    transition: .3s;
+}
+
+.dress-styles__tile:hover,
+.dress-styles__tile:focus {
+    outline: 1px solid #000000;
+}
+
+.dress-styles__tile::after {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-bottom: 80px solid #000;
+    border-left: 80px solid transparent;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transform: translateX(80px);
+    transition: .36s;
+}
+
+.dress-styles__tile:hover::after,
+.dress-styles__tile:focus::after {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.dress-style__link-effect {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    z-index: 1;
+    opacity: 0;
+    transform: translateX(80px);
+    transition: .36s;
+}
+
+.dress-styles__tile:hover .dress-style__link-effect,
+.dress-styles__tile:focus .dress-style__link-effect {
+    transform: translateX(0px);
+    opacity: 1;
 }
 
 .dress-styles__tile:nth-child(2) {
