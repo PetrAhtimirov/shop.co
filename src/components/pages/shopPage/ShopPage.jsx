@@ -17,10 +17,24 @@ const ShopPage = () => {
         ...(searchParams.get('style')
             ? { style: searchParams.get('style') }
             : {}),
+        ...(searchParams.get('minPrice')
+            ? { minPrice: searchParams.get('minPrice') }
+            : {}),
+        ...(searchParams.get('maxPrice')
+            ? { maxPrice: searchParams.get('maxPrice') }
+            : {}),
+        ...(searchParams.getAll('size')
+            ? { size: searchParams.getAll('size') }
+            : {}),
     };
 
     const appendSearchParam = (param) => {
         setSearchParams({ ...urlSort, ...urlFilter, ...param });
+    };
+
+    const deleteSearchParam = (paramName) => {
+        searchParams.delete(paramName);
+        setSearchParams(searchParams);
     };
 
     return (
@@ -34,6 +48,7 @@ const ShopPage = () => {
                     <Filters
                         filter={urlFilter}
                         appendSearchParam={appendSearchParam}
+                        deleteSearchParam={deleteSearchParam}
                     />
                     <ShopList
                         sort={urlSort.sort}

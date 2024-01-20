@@ -2,18 +2,77 @@ import MultiRangeSlider from 'multi-range-slider-react';
 import './filters.css';
 import rightArrowImage from './images/right-arrow.svg';
 
-const Filters = ({ filter, appendSearchParam }) => {
+const Filters = ({ filter, appendSearchParam, deleteSearchParam }) => {
+    const setFilter = (key, value) => {
+        if (filter[key] === value) {
+            deleteSearchParam(key);
+        } else {
+            appendSearchParam({ [key]: value });
+        }
+    };
+
+    const setSize = (size, e) => {
+        const sizeList = filter.size || [];
+        if (sizeList.includes(size)) {
+            deleteSearchParam('size');
+            appendSearchParam({ size: sizeList.filter((i) => i !== size) });
+        } else {
+            appendSearchParam({
+                size: [size, ...sizeList],
+            });
+        }
+    };
+
+    const sizeFilter = () => {
+        const sizeTypes = [
+            'XX-Small',
+            'X-Small',
+            'Small',
+            'Medium',
+            'Large',
+            'X-Large',
+            'XX-Large',
+            '3X-Large',
+            '4X-Large',
+        ];
+
+        return (
+            <ul className="filters__sizes">
+                {sizeTypes.map((sizeType, i) => (
+                    <li key={i}>
+                        <input
+                            className="filters__checkbox-input"
+                            type="checkbox"
+                            name={sizeType}
+                            id={sizeType}
+                            checked={filter.size.includes(sizeType)}
+                            onChange={(e) => setSize(sizeType, e)}
+                        />
+                        <label
+                            className="filters__checkbox-label"
+                            htmlFor={sizeType}
+                        >
+                            {sizeType}
+                        </label>
+                    </li>
+                ))}
+            </ul>
+        );
+    };
+
     return (
-        <form className="filters">
+        <section className="filters">
             <h2 className="filters__title">Filters</h2>
             <hr className="filters__hr" />
             <ul className="filters__clothes-type">
                 <li>
                     <button
-                        className="filters__button"
+                        className={`filters__button ${
+                            filter.type === 'T-shirt' ? 'active' : ''
+                        }`}
                         onClick={(e) => {
                             e.preventDefault();
-                            appendSearchParam({ type: 'T-shirt' });
+                            setFilter('type', 'T-shirt');
                         }}
                     >
                         T-shirts
@@ -22,10 +81,12 @@ const Filters = ({ filter, appendSearchParam }) => {
                 </li>
                 <li>
                     <button
-                        className="filters__button"
+                        className={`filters__button ${
+                            filter.type === 'Shorts' ? 'active' : ''
+                        }`}
                         onClick={(e) => {
                             e.preventDefault();
-                            appendSearchParam({ type: 'Shorts' });
+                            setFilter('type', 'Shorts');
                         }}
                     >
                         Shorts
@@ -34,10 +95,12 @@ const Filters = ({ filter, appendSearchParam }) => {
                 </li>
                 <li>
                     <button
-                        className="filters__button"
+                        className={`filters__button ${
+                            filter.type === 'Shirt' ? 'active' : ''
+                        }`}
                         onClick={(e) => {
                             e.preventDefault();
-                            appendSearchParam({ type: 'Shirt' });
+                            setFilter('type', 'Shirt');
                         }}
                     >
                         Shirts
@@ -46,10 +109,12 @@ const Filters = ({ filter, appendSearchParam }) => {
                 </li>
                 <li>
                     <button
-                        className="filters__button"
+                        className={`filters__button ${
+                            filter.type === 'Hoodie' ? 'active' : ''
+                        }`}
                         onClick={(e) => {
                             e.preventDefault();
-                            appendSearchParam({ type: 'Hoodie' });
+                            setFilter('type', 'Hoodie');
                         }}
                     >
                         Hoodie
@@ -58,10 +123,12 @@ const Filters = ({ filter, appendSearchParam }) => {
                 </li>
                 <li>
                     <button
-                        className="filters__button"
+                        className={`filters__button ${
+                            filter.type === 'Jeans' ? 'active' : ''
+                        }`}
                         onClick={(e) => {
                             e.preventDefault();
-                            appendSearchParam({ type: 'Jeans' });
+                            setFilter('type', 'Jeans');
                         }}
                     >
                         Jeans
@@ -75,82 +142,80 @@ const Filters = ({ filter, appendSearchParam }) => {
                 ruler={false}
                 label={false}
                 max={250}
-                minValue={50}
-                maxValue={200}
+                minValue={filter.minPrice || 50}
+                maxValue={filter.maxPrice || 200}
                 barInnerColor="#000"
+                onChange={(data) => {
+                    appendSearchParam({
+                        minPrice: data.minValue,
+                        maxPrice: data.maxValue,
+                    });
+                }}
             />
             <hr className="filters__hr" />
             <h2 className="filters__title">Size</h2>
-            <ul className="filters__sizes">
-                <li>
-                    <label htmlFor="xx-small">XX-Small</label>
-                    <input type="checkbox" name="xx-small" id="xx-small" />
-                </li>
-                <li>
-                    <label htmlFor="x-small">X-Small</label>
-                    <input type="checkbox" name="x-small" id="x-small" />
-                </li>
-                <li>
-                    <label htmlFor="small">Small</label>
-                    <input type="checkbox" name="small" id="small" />
-                </li>
-                <li>
-                    <label htmlFor="medium">Medium</label>
-                    <input type="checkbox" name="medium" id="medium" />
-                </li>
-                <li>
-                    <label htmlFor="large">Large</label>
-                    <input type="checkbox" name="large" id="large" />
-                </li>
-                <li>
-                    <label htmlFor="x-large">X-Large</label>
-                    <input type="checkbox" name="x-large" id="x-large" />
-                </li>
-                <li>
-                    <label htmlFor="xx-large">XX-Large</label>
-                    <input type="checkbox" name="xx-large" id="xx-large" />
-                </li>
-                <li>
-                    <label htmlFor="3x-large">3X-Large</label>
-                    <input type="checkbox" name="3x-large" id="3x-large" />
-                </li>
-                <li>
-                    <label htmlFor="4x-large">4X-Large</label>
-                    <input type="checkbox" name="4x-large" id="4x-large" />
-                </li>
-            </ul>
+            {sizeFilter()}
             <hr className="filters__hr" />
             <h2 className="filters__title">Dress Style</h2>
             <ul className="filters__dress-styles">
                 <li>
-                    <button className="filters__button">
+                    <button
+                        className={`filters__button ${
+                            filter.style === 'Casual' ? 'active' : ''
+                        }`}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            appendSearchParam({ style: 'Casual' });
+                        }}
+                    >
                         Casual
                         <img src={rightArrowImage} alt="follow filter" />
                     </button>
                 </li>
                 <li>
-                    <button className="filters__button">
+                    <button
+                        className={`filters__button ${
+                            filter.style === 'Formal' ? 'active' : ''
+                        }`}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            appendSearchParam({ style: 'Formal' });
+                        }}
+                    >
                         Formal
                         <img src={rightArrowImage} alt="follow filter" />
                     </button>
                 </li>
                 <li>
-                    <button className="filters__button">
+                    <button
+                        className={`filters__button ${
+                            filter.style === 'Party' ? 'active' : ''
+                        }`}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            appendSearchParam({ style: 'Party' });
+                        }}
+                    >
                         Party
                         <img src={rightArrowImage} alt="follow filter" />
                     </button>
                 </li>
                 <li>
-                    <button className="filters__button">
+                    <button
+                        className={`filters__button ${
+                            filter.style === 'Gym' ? 'active' : ''
+                        }`}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            appendSearchParam({ style: 'Gym' });
+                        }}
+                    >
                         Gym
                         <img src={rightArrowImage} alt="follow filter" />
                     </button>
                 </li>
             </ul>
-            <button className="filters__submit" type="submit">
-                Apply Filter
-            </button>
-        </form>
+        </section>
     );
 };
 

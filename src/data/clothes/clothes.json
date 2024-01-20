@@ -10,7 +10,8 @@
         "sells": 100,
         "discount": null,
         "discountPrice": null,
-        "date": "2024-01-03"
+        "date": "2024-01-03",
+        "sizes": ["XX-Small", "X-Small", "Small", "Medium", "Large", "X-Large", "XX-Large", "3X-Large", "4X-Large"]
     },
     {
         "id": 2,
@@ -23,7 +24,8 @@
         "sells": 40,
         "discount": "10%",
         "discountPrice": "$260",
-        "date": "2024-01-03"
+        "date": "2024-01-03",
+        "sizes": ["Medium", "Large", "X-Large", "XX-Large", "3X-Large", "4X-Large"]
     },
     {
         "id": 3,
@@ -36,7 +38,8 @@
         "sells": 50,
         "discount": null,
         "discountPrice": null,
-        "date": "2024-01-01"
+        "date": "2024-01-01",
+        "sizes": ["Small", "Medium", "Large", "X-Large"]
     },
     {
         "id": 4,
@@ -49,7 +52,8 @@
         "sells": 80,
         "discount": null,
         "discountPrice": null,
-        "date": "2024-01-01"
+        "date": "2024-01-01",
+        "sizes": ["XX-Small", "X-Small", "Small", "3X-Large", "4X-Large"]
     },
     {
         "id": 5,
@@ -62,7 +66,8 @@
         "sells": 30,
         "discount": "30%",
         "discountPrice": "$150",
-        "date": "2024-01-01"
+        "date": "2024-01-01",
+        "sizes": ["XX-Small", "Large", "X-Large", "XX-Large", "3X-Large", "4X-Large"]
     },
     {
         "id": 6,
@@ -75,7 +80,8 @@
         "sells": 50,
         "discount": null,
         "discountPrice": null,
-        "date": "2024-01-02"
+        "date": "2024-01-02",
+        "sizes": ["XX-Small", "X-Small", "Small", "Medium", "Large", "X-Large", "4X-Large"]
     },
     {
         "id": 7,
@@ -88,7 +94,8 @@
         "sells": 70,
         "discount": "30%",
         "discountPrice": "$160",
-        "date": "2024-01-02"
+        "date": "2024-01-02",
+        "sizes": ["XX-Small", "X-Small", "Small", "Medium", "Large", "X-Large"]
     },
     {
         "id": 8,
@@ -101,7 +108,8 @@
         "sells": 220,
         "discount": "10%",
         "discountPrice": "$232",
-        "date": "2024-01-01"
+        "date": "2024-01-01",
+        "sizes": ["Small", "Medium", "Large", "X-Large"]
     },
     {
         "id": 9,
@@ -114,7 +122,8 @@
         "sells": 120,
         "discount": null,
         "discountPrice": null,
-        "date": "2024-01-01"
+        "date": "2024-01-01",
+        "sizes": ["Medium", "Large", "X-Large", "XX-Large", "3X-Large", "4X-Large"]
     },
     {
         "id": 10,
@@ -127,7 +136,8 @@
         "sells": 105,
         "discount": null,
         "discountPrice": null,
-        "date": "2024-01-01"
+        "date": "2024-01-01",
+        "sizes": ["XX-Small", "X-Small", "Small", "Medium", "Large", "X-Large", "XX-Large"]
     },
     {
         "id": 11,
@@ -140,6 +150,7 @@
         "sells": 105,
         "discount": null,
         "discountPrice": null,
-        "date": "2024-01-01"
+        "date": "2024-01-01",
+        "sizes": ["XX-Small", "X-Small", "Small", "Medium", "Large", "X-Large", "XX-Large"]
     }
 ]

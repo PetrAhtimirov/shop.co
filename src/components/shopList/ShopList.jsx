@@ -31,7 +31,6 @@ const ShopList = ({ sort, filter, appendSearchParam }) => {
             />
         )
     );
-
     return (
         <section className="shop-list">
             <div className="shop-list__header">

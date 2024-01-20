@@ -28,10 +28,31 @@ const useClothesService = () => {
                 : [];
         let filteredData = sortedData.filter((obj) => {
             for (const key in filters) {
-                if (obj[key] !== filters[key]) {
-                    return false;
+                if (
+                    key !== 'minPrice' &&
+                    key !== 'maxPrice' &&
+                    key !== 'size'
+                ) {
+                    if (obj[key] !== filters[key]) {
+                        return false;
+                    }
                 }
             }
+            if (filters.maxPrice && +obj.price.slice(1) > +filters.maxPrice) {
+                return false;
+            }
+            if (filters.maxPrice && +obj.price.slice(1) < +filters.minPrice) {
+                return false;
+            }
+
+            let flag = filters.size.length !== 0;
+            filters.size.forEach((filterSize) => {
+                flag = !obj.sizes.includes(filterSize) && flag;
+            });
+            if (flag) {
+                return false;
+            }
+
             return true;
         });
 
