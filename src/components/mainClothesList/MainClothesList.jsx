@@ -20,7 +20,7 @@ const MainClothesList = ({ title }) => {
             );
         }
 
-        if (title === 'Top selling') {
+        if (title === 'Top Selling') {
             getSortedBySellsClothes().then((data) =>
                 setClothesList(data.slice(0, 4))
             );

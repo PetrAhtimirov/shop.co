@@ -19,7 +19,7 @@ const MainPage = () => {
             <div className="container">
                 <hr className="main__lists-hr" />
             </div>
-            <MainClothesList title="Top selling" />
+            <MainClothesList title="Top Selling" />
             <MainDressStyles />
             <MainCommentsList />
             <AppFooter />

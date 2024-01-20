@@ -165,7 +165,7 @@ const Filters = ({ filter, appendSearchParam, deleteSearchParam }) => {
                         }`}
                         onClick={(e) => {
                             e.preventDefault();
-                            appendSearchParam({ style: 'Casual' });
+                            setFilter('style', 'Casual');
                         }}
                     >
                         Casual
@@ -179,7 +179,7 @@ const Filters = ({ filter, appendSearchParam, deleteSearchParam }) => {
                         }`}
                         onClick={(e) => {
                             e.preventDefault();
-                            appendSearchParam({ style: 'Formal' });
+                            setFilter('style', 'Formal');
                         }}
                     >
                         Formal
@@ -193,7 +193,7 @@ const Filters = ({ filter, appendSearchParam, deleteSearchParam }) => {
                         }`}
                         onClick={(e) => {
                             e.preventDefault();
-                            appendSearchParam({ style: 'Party' });
+                            setFilter('style', 'Party');
                         }}
                     >
                         Party
@@ -207,7 +207,7 @@ const Filters = ({ filter, appendSearchParam, deleteSearchParam }) => {
                         }`}
                         onClick={(e) => {
                             e.preventDefault();
-                            appendSearchParam({ style: 'Gym' });
+                            setFilter('style', 'Gym');
                         }}
                     >
                         Gym
