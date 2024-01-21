@@ -1,32 +1,20 @@
 const useClothesService = () => {
-    const sortByDateClothes = async (from = 0, to = 9) => {
-        const data = await require('../data/clothes/clothes.json');
-        return data
-            .sort((a, b) => {
-                const aDate = new Date(a.date);
-                const bDate = new Date(b.date);
-                return bDate - aDate;
-            })
-            .slice(from, to);
+    const sortByDateClothes = (data) => {
+        return data.sort((a, b) => {
+            const aDate = new Date(a.date);
+            const bDate = new Date(b.date);
+            return bDate - aDate;
+        });
     };
 
-    const sortBySellsClothes = async (from = 0, to = 9) => {
-        const data = await require('../data/clothes/clothes.json');
-        return data
-            .sort((a, b) => {
-                return b.sells - a.sells;
-            })
-            .slice(from, to);
+    const sortBySellsClothes = (data) => {
+        return data.sort((a, b) => {
+            return b.sells - a.sells;
+        });
     };
 
-    const getClothes = async (sort, filters = {}, from = 0, to = 9) => {
-        let sortedData =
-            sort === 'Most Popular'
-                ? await sortBySellsClothes(from, to)
-                : sort === 'New'
-                ? await sortByDateClothes(from, to)
-                : [];
-        let filteredData = sortedData.filter((obj) => {
+    const filterClothes = (data, filters) => {
+        return data.filter((obj) => {
             for (const key in filters) {
                 if (
                     key !== 'minPrice' &&
@@ -45,44 +33,43 @@ const useClothesService = () => {
                 return false;
             }
 
-            let flag = filters.size.length !== 0;
-            filters.size.forEach((filterSize) => {
-                flag = !obj.sizes.includes(filterSize) && flag;
-            });
-            if (flag) {
-                return false;
+            if (filters.size && filters.size.length !== 0) {
+                let flag = false;
+                filters.size.forEach((filterSize) => {
+                    flag = !obj.sizes.includes(filterSize) && flag;
+                });
+                if (flag) {
+                    return false;
+                }
             }
 
             return true;
         });
-
-        return filteredData.slice(from, to);
     };
 
-    const getSortedByDateClothes = async (from = 0, to = 9) => {
+    const getClothes = async (sort, filters = {}, from = 0, to = 9) => {
         const data = await require('../data/clothes/clothes.json');
-        return data
-            .sort((a, b) => {
-                const aDate = new Date(a.date);
-                const bDate = new Date(b.date);
-                return bDate - aDate;
-            })
-            .slice(from, to);
+
+        let filteredData = filterClothes(data, filters);
+
+        let sortedData =
+            sort === 'Most Popular'
+                ? sortBySellsClothes(filteredData, from, to)
+                : sort === 'New'
+                ? sortByDateClothes(filteredData, from, to)
+                : [];
+
+        return sortedData.slice(from, to);
     };
 
-    const getSortedBySellsClothes = async (from = 0, to = 9) => {
+    const getClothesCount = async (filters = {}) => {
         const data = await require('../data/clothes/clothes.json');
-        return data
-            .sort((a, b) => {
-                return b.sells - a.sells;
-            })
-            .slice(from, to);
+        return filterClothes(data, filters).length;
     };
 
     return {
         getClothes,
-        getSortedByDateClothes,
-        getSortedBySellsClothes,
+        getClothesCount,
     };
 };
 

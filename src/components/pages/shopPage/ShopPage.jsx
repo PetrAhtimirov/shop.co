@@ -6,6 +6,7 @@ import BreadCrumbs from '../../breadCrumbs/BreadCrumbs';
 import Filters from '../../filters/Filters';
 import ShopList from '../../shopList/ShopList';
 import AppFooter from '../../appFooter/AppFooter';
+import ScrollToTop from '../../scrollToTop/ScrollToTop';
 
 import './shopPage.css';
 
@@ -39,6 +40,7 @@ const ShopPage = () => {
 
     return (
         <>
+            <ScrollToTop />
             <AppNotice />
             <AppHeader />
             <div className="container">

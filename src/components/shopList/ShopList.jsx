@@ -10,12 +10,25 @@ import arrowBottomImage from './images/arrow-bottom.svg';
 
 const ShopList = ({ sort, filter, appendSearchParam }) => {
     const [clothesList, setClothesList] = useState([]);
+    const [clothesCount, setClothesCount] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState(1);
 
-    const { getClothes } = useClothesService();
+    const { getClothes, getClothesCount } = useClothesService();
 
     useEffect(() => {
-        getClothes(sort, filter).then(setClothesList);
+        getClothesCount(filter).then(setClothesCount);
+        console.log(Math.ceil(clothesCount / 9));
     }, [appendSearchParam]);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [currentSlide]);
+
+    useEffect(() => {
+        getClothes(sort, filter, (currentSlide - 1) * 9, currentSlide * 9).then(
+            setClothesList
+        );
+    }, [appendSearchParam, currentSlide]);
 
     const clothes = clothesList.map(
         ({ id, name, score, price, discount, discountPrice, preview }) => (
@@ -77,17 +90,35 @@ const ShopList = ({ sort, filter, appendSearchParam }) => {
             <div className="shop-list__inner">{clothes}</div>
             <hr className="shop-list__hr" />
             <div className="shop-list__triggers">
-                <button className="shop-list__left-trigger">
+                <button
+                    className="shop-list__left-trigger"
+                    onClick={() => setCurrentSlide((slide) => slide - 1)}
+                    disabled={currentSlide === 1}
+                >
                     <img src={arrowLeftImage} alt="" />
                     Previous
                 </button>
                 <div className="shop-list__pages-triggers">
-                    <button className="active">1</button>
-                    <button>2</button>
-                    <button>3</button>
-                    <button>4</button>
+                    {Array.from(
+                        { length: Math.ceil(clothesCount / 9) },
+                        (_, i) => (
+                            <button
+                                key={i}
+                                className={
+                                    i + 1 === currentSlide ? 'active' : ''
+                                }
+                                onClick={() => setCurrentSlide(i + 1)}
+                            >
+                                {i + 1}
+                            </button>
+                        )
+                    )}
                 </div>
-                <button className="shop-list__right-trigger">
+                <button
+                    className="shop-list__right-trigger"
+                    onClick={() => setCurrentSlide((slide) => slide + 1)}
+                    disabled={currentSlide >= Math.ceil(clothesCount / 9)}
+                >
                     Next
                     <img src={arrowRightImage} alt="" />
                 </button>

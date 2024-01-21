@@ -6,20 +6,22 @@ import MainClothesList from '../../mainClothesList/MainClothesList';
 import MainDressStyles from '../../mainDressStyles/MainDressStyles';
 import MainCommentsList from '../../mainCommentsList/MainCommentsList';
 import AppFooter from '../../appFooter/AppFooter';
+import ScrollToTop from '../../scrollToTop/ScrollToTop';
 
 import './mainPage.css';
 const MainPage = () => {
     return (
         <>
+            <ScrollToTop />
             <AppNotice />
             <AppHeader />
             <MainBanner />
             <RunningBrands />
-            <MainClothesList title="New Arrivals" />
+            <MainClothesList title="New Arrivals" sort="New" />
             <div className="container">
                 <hr className="main__lists-hr" />
             </div>
-            <MainClothesList title="Top Selling" />
+            <MainClothesList title="Top Selling" sort="Most Popular" />
             <MainDressStyles />
             <MainCommentsList />
             <AppFooter />

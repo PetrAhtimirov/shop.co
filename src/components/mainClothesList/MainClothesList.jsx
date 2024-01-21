@@ -7,24 +7,13 @@ import useClothesService from '../../services/ClothesService';
 import './mainClothesList.css';
 import leftArrowImage from './images/arrow-left.svg';
 
-const MainClothesList = ({ title }) => {
+const MainClothesList = ({ title, sort }) => {
     const [clothesList, setClothesList] = useState([]);
 
-    const { getSortedByDateClothes, getSortedBySellsClothes } =
-        useClothesService();
+    const { getClothes } = useClothesService();
 
     useEffect(() => {
-        if (title === 'New Arrivals') {
-            getSortedByDateClothes().then((data) =>
-                setClothesList(data.slice(0, 4))
-            );
-        }
-
-        if (title === 'Top Selling') {
-            getSortedBySellsClothes().then((data) =>
-                setClothesList(data.slice(0, 4))
-            );
-        }
+        getClothes(sort).then((data) => setClothesList(data.slice(0, 4)));
     }, []);
 
     const clothes = clothesList.map(
