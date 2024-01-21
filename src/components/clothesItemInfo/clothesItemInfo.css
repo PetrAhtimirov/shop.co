@@ -1,0 +1,15 @@
+.clothes-item-info__container {
+    display: flex;
+    gap: 40px;
+}
+
+.clothes-item-info__images {
+    display: flex;
+    gap: 14px;
+}
+
+.clothes-item-info__side-images {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}

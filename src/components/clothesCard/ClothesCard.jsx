@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 import './clothesCard.css';
 
 const ClothesCard = ({
+    id,
     name,
     score,
     price,
     discount,
     discountPrice,
     preview,
-    link,
 }) => {
     return (
-        <Link className="clothes-card__link" to={link}>
+        <Link className="clothes-card__link" to={`/clothesItem/${id}`}>
             <div className="clothes-card">
                 <img
                     className="clothes-card__image"

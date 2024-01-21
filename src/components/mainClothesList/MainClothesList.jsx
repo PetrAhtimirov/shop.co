@@ -20,13 +20,13 @@ const MainClothesList = ({ title, sort }) => {
         ({ id, name, score, price, discount, discountPrice, preview }) => (
             <ClothesCard
                 key={id}
+                id={id}
                 name={name}
                 score={score}
                 price={price}
                 discount={discount}
                 discountPrice={discountPrice}
                 preview={require('../../data/' + preview)}
-                link="#"
             />
         )
     );

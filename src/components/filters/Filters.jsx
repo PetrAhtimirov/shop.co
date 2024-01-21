@@ -141,9 +141,9 @@ const Filters = ({ filter, appendSearchParam, deleteSearchParam }) => {
             <MultiRangeSlider
                 ruler={false}
                 label={false}
-                max={250}
-                minValue={filter.minPrice || 50}
-                maxValue={filter.maxPrice || 200}
+                max={300}
+                minValue={filter.minPrice || 0}
+                maxValue={filter.maxPrice || 300}
                 barInnerColor="#000"
                 onChange={(data) => {
                     appendSearchParam({
