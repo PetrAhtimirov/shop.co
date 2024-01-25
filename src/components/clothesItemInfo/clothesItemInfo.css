@@ -13,3 +13,127 @@
     flex-direction: column;
     gap: 14px;
 }
+
+.clothes-item-info__side-images > img {
+    width: 152px;
+    height: 167px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.clothes-item-info__main-image {
+    width: 444px;
+    height: 530px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.clothes-item-info__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.clothes-item-info__main-info > h2 {
+    font-family: 'Integral CF';
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 14px;
+}
+
+.clothes-item-info__price {
+    margin-top: 14px;
+    font-size: 2em;
+}
+
+.clothes-item-info__desc {
+    color: rgba(0, 0, 0, 0.60);
+    line-height: 1.375em;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.clothes-item-info__hr {
+    border: none;
+    height: 1px;
+    width: 100%;
+    background-color: #00000010;
+    margin: 0;
+}
+
+.clothes-item-info__item-size {
+
+}
+
+.clothes-item-info__item-size__title {
+    color: rgba(0, 0, 0, 0.60);
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.clothes-item-info__size__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.clothes-item-info__size__input {
+    display: none;
+}
+
+.clothes-item-info__size__label {
+    display: block;
+    padding: 12px 24px;
+    border-radius: 62px;
+    background-color: #F0F0F0;
+    color: rgba(0, 0, 0, 0.60);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.clothes-item-info__size__input:checked + .clothes-item-info__size__label {
+    color: #fff;
+    background-color: #000;
+}
+
+.clothes-item-info__add-to-card {
+    display: flex;
+    gap: 20px;
+}
+
+.clothes-item-info__counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 62px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    width: 170px;
+}
+
+.clothes-item-info__counter > button {
+    border: none;
+    padding: 14px 20px;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.clothes-item-info__counter > button > img {
+    height: 24px;
+}
+
+.clothes-item-info__counter > span {
+    font-weight: 500;
+}
+
+.clothes-item-info__add-to-card > button {
+    border: none;
+    border-radius: 62px;
+    flex-grow: 1;
+    color: #fff;
+    background-color: #000;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+}

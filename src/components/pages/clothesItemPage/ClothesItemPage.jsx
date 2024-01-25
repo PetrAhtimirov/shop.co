@@ -14,6 +14,7 @@ const ClothesItemPage = () => {
             <AppNotice />
             <AppHeader />
             <div className="container">
+                <hr className="header-hr" />
                 <BreadCrumbs />
             </div>
             <ClothesItemInfo id={id} />

@@ -67,9 +67,15 @@ const useClothesService = () => {
         return filterClothes(data, filters).length;
     };
 
+    const getClothesById = async (id) => {
+        const data = await require('../data/clothes/clothes.json');
+        return data.filter((item) => +item.id === +id)[0];
+    };
+
     return {
         getClothes,
         getClothesCount,
+        getClothesById,
     };
 };
 
