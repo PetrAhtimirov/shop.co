@@ -11,6 +11,7 @@ const ClothesItemInfo = ({ id }) => {
     const [curClothesItem, setCurClothesItem] = useState({});
     const [loaded, setLoaded] = useState(false);
     const [counter, setCounter] = useState(1);
+    const [selectedImage, setSelectedImage] = useState(0);
 
     const { getClothesById } = useClothesService();
 
@@ -20,8 +21,6 @@ const ClothesItemInfo = ({ id }) => {
             .then(() => setLoaded(true));
     }, []);
 
-    console.log(curClothesItem);
-
     return (
         <section className="clothes-item-info">
             <div className="container clothes-item-info__container">
@@ -30,9 +29,14 @@ const ClothesItemInfo = ({ id }) => {
                         {loaded ? (
                             curClothesItem.images.map((item, i) => (
                                 <img
+                                    className={
+                                        i === selectedImage ? 'active' : ''
+                                    }
                                     key={i}
                                     src={require('../../data/' + item)}
                                     alt={curClothesItem.name}
+                                    onClick={() => setSelectedImage(i)}
+                                    tabIndex={1}
                                 />
                             ))
                         ) : (
@@ -43,7 +47,7 @@ const ClothesItemInfo = ({ id }) => {
                         <img
                             className="clothes-item-info__main-image"
                             src={require('../../data/' +
-                                curClothesItem.images[0])}
+                                curClothesItem.images[selectedImage])}
                             alt={curClothesItem.name}
                         />
                     ) : (
@@ -53,7 +57,15 @@ const ClothesItemInfo = ({ id }) => {
                 <div className="clothes-item-info__inner">
                     <div className="clothes-item-info__main-info">
                         <h2>{curClothesItem.name}</h2>
-                        <Rating score={curClothesItem.score} showScoreNum />
+                        {loaded ? (
+                            <Rating
+                                score={+curClothesItem.score}
+                                showScoreNum
+                            />
+                        ) : (
+                            <></>
+                        )}
+
                         <p className="clothes-card__price clothes-item-info__price">
                             {curClothesItem.price}
                             {curClothesItem.discount ? (

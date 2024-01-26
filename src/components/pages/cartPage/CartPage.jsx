@@ -1,15 +1,10 @@
-import { useParams } from 'react-router-dom';
-
 import AppNotice from '../../appNotice/AppNotice';
 import AppHeader from '../../appHeader/AppHeader';
 import BreadCrumbs from '../../breadCrumbs/BreadCrumbs';
-import ClothesItemInfo from '../../clothesItemInfo/ClothesItemInfo';
-import AppFooter from '../../appFooter/AppFooter';
 
-import './clothesItemPage.css';
+import './cartPage.css';
 
-const ClothesItemPage = () => {
-    const { id } = useParams();
+const CartPage = () => {
     return (
         <>
             <AppNotice />
@@ -17,11 +12,10 @@ const ClothesItemPage = () => {
             <div className="container">
                 <hr className="header-hr" />
                 <BreadCrumbs />
+                <h2 className="cart__header">Your Cart</h2>
             </div>
-            <ClothesItemInfo id={id} />
-            {/* <AppFooter /> */}
         </>
     );
 };
 
-export default ClothesItemPage;
+export default CartPage;

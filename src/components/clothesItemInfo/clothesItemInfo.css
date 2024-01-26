@@ -19,7 +19,19 @@
     height: 167px;
     object-fit: cover;
     border-radius: 20px;
+    outline: 1px solid transparent;
+    transition: .2s;
 }
+
+.clothes-item-info__side-images > img.active,
+.clothes-item-info__side-images > img.active:hover {
+    outline: 1px solid #000;
+}
+
+.clothes-item-info__side-images > img:hover {
+    outline: 1px solid #00000030;
+}
+
 
 .clothes-item-info__main-image {
     width: 444px;

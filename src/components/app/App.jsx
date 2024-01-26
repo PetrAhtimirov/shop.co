@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { MainPage, ShopPage, ClothesItemPage } from '../pages/index';
+import { MainPage, ShopPage, ClothesItemPage, CartPage } from '../pages/index';
 
 import './app.css';
 
@@ -14,6 +14,7 @@ function App() {
                         path="/clothesItem/:id"
                         element={<ClothesItemPage />}
                     />
+                    <Route path="/cart" element={<CartPage />} />
                 </Routes>
             </div>
         </Router>

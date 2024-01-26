@@ -45,7 +45,7 @@ const AppHeader = () => {
                 <nav className="menu-nav">
                     <ul className="menu-nav__list">
                         <li className="menu-nav__item">
-                            <Link to="#">
+                            <Link to="/cart">
                                 <img src={cartImage} alt="Shopping cart" />
                             </Link>
                         </li>
