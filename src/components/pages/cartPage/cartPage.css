@@ -2,4 +2,11 @@
     font-family: 'Integral CF';
     font-size: 2.5em;
     font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.cart__inner {
+    display: flex;
+    gap: 20px;
 }

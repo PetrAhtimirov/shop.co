@@ -1,0 +1,90 @@
+.cart__clothes-list {
+    flex-grow: 1;
+    border-radius: 20px;
+    padding: 20px 24px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    overflow: hidden;
+}
+
+.cart__clothes-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart__clothes-list__hr {
+    border: none;
+    width: 100%;
+    height: 1px;
+    background-color: #00000010;
+    margin: 24px 0;
+}
+
+.cart__clothes-item__data {
+    display: flex;
+}
+
+.cart__clothes-item__data img {
+    height: 125px;
+    width: 125px;
+    object-fit: cover;
+    border-radius: 8.658px;
+}
+
+.cart__clothes-item__info {
+    margin-left: 16px;
+    padding: 3px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cart__clothes-item__title {
+    font-size: 1.25em;
+    margin: 0;
+}
+
+.cart__clothes-item__size {
+    color: #00000060;
+    font-size: 0.875em;
+    margin: 2px 0;
+}
+
+.cart__clothes-item__size > span {
+    color: #000;
+}
+
+.cart__clothes-item__price {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0;
+}
+
+.cart__clothes-item__control {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.cart_clothes-item__delete {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.cart__clothes-item__counter {
+    background-color: #f0f0f0;
+    border-radius: 62px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.cart__clothes-item__counter button {
+    border: none;
+    background-color: transparent;
+    padding: 12px 20px;
+    cursor: pointer;
+}
