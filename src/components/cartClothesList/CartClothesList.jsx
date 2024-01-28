@@ -1,11 +1,25 @@
-import { useState } from 'react';
-
 import './cartClothesList.css';
 import trashcanImage from './images/trashcan.svg';
 import minusImage from './images/minus.svg';
 import plusImage from './images/plus.svg';
 
-const CartClothesList = ({ clothesList }) => {
+const CartClothesList = ({ clothesList, setClothesList }) => {
+    const onDeleteItemInCart = (i) => {
+        setClothesList((arr) => arr.filter((item, j) => j !== i));
+    };
+
+    const onIncCounter = (i) => {
+        let updList = [...clothesList];
+        updList[i].count = updList[i].count + 1;
+        setClothesList(updList);
+    };
+
+    const onDecCounter = (i) => {
+        let updList = [...clothesList];
+        updList[i].count = updList[i].count - 1;
+        setClothesList(updList);
+    };
+
     return (
         <div className="cart__clothes-list">
             {clothesList.map((item, i) => (
@@ -24,24 +38,42 @@ const CartClothesList = ({ clothesList }) => {
                                     </h3>
                                     <p className="cart__clothes-item__size">
                                         <span>Size: </span>
-                                        Large
+                                        {item.size}
                                     </p>
                                 </div>
                                 <p className="cart__clothes-item__price">
-                                    {item.price}
+                                    ${+item.price.slice(1) * +item.count}
                                 </p>
                             </div>
                         </div>
                         <div className="cart__clothes-item__control">
                             <button className="cart_clothes-item__delete">
-                                <img src={trashcanImage} alt="delete" />
+                                <img
+                                    src={trashcanImage}
+                                    alt="delete"
+                                    onClick={() => onDeleteItemInCart(i)}
+                                />
                             </button>
                             <div className="cart__clothes-item__counter">
-                                <button>
+                                <button
+                                    disabled={
+                                        clothesList[i].count <= 1
+                                            ? 'disabled'
+                                            : null
+                                    }
+                                    onClick={() => onDecCounter(i)}
+                                >
                                     <img src={minusImage} alt="minus" />
                                 </button>
-                                <span>1</span>
-                                <button>
+                                <span>{item.count}</span>
+                                <button
+                                    disabled={
+                                        clothesList[i].count >= 20
+                                            ? 'disabled'
+                                            : null
+                                    }
+                                    onClick={() => onIncCounter(i)}
+                                >
                                     <img src={plusImage} alt="plus" />
                                 </button>
                             </div>

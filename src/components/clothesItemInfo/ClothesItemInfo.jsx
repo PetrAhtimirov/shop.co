@@ -11,9 +11,31 @@ const ClothesItemInfo = ({ id }) => {
     const [curClothesItem, setCurClothesItem] = useState({});
     const [loaded, setLoaded] = useState(false);
     const [counter, setCounter] = useState(1);
+    const [curSize, setCurSize] = useState(0);
     const [selectedImage, setSelectedImage] = useState(0);
 
     const { getClothesById } = useClothesService();
+
+    const onAddItemInCart = () => {
+        const newItem = {
+            id: curClothesItem.id,
+            name: curClothesItem.name,
+            size: curClothesItem.sizes[curSize],
+            price: curClothesItem.price,
+            discountPrice: curClothesItem.discountPrice,
+            preview: curClothesItem.preview,
+            count: counter,
+        };
+        const itemsInCart = localStorage.getItem('itemsInCart');
+        if (itemsInCart === null) {
+            localStorage.setItem('itemsInCart', JSON.stringify([newItem]));
+        } else {
+            localStorage.setItem(
+                'itemsInCart',
+                JSON.stringify([...JSON.parse(itemsInCart), newItem])
+            );
+        }
+    };
 
     useEffect(() => {
         getClothesById(id)
@@ -97,7 +119,9 @@ const ClothesItemInfo = ({ id }) => {
                                             type="radio"
                                             id={size}
                                             name="size"
-                                            value={size}
+                                            value=""
+                                            checked={!!(curSize === i)}
+                                            onChange={() => setCurSize(i)}
                                         />
                                         <label
                                             className="clothes-item-info__size__label"
@@ -129,7 +153,7 @@ const ClothesItemInfo = ({ id }) => {
                                 <img src={plusImage} alt="plus" />
                             </button>
                         </div>
-                        <button>Add to Cart</button>
+                        <button onClick={onAddItemInCart}>Add to Cart</button>
                     </div>
                 </div>
             </div>

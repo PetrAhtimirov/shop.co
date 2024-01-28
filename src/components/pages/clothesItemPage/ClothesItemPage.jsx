@@ -8,7 +8,7 @@ import AppFooter from '../../appFooter/AppFooter';
 
 import './clothesItemPage.css';
 
-const ClothesItemPage = () => {
+const ClothesItemPage = ({ addItemInCart }) => {
     const { id } = useParams();
     return (
         <>

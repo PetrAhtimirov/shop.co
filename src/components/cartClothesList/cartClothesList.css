@@ -80,6 +80,8 @@
     overflow: hidden;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 140px;
 }
 
 .cart__clothes-item__counter button {
