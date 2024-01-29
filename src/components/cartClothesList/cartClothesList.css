@@ -4,6 +4,7 @@
     padding: 20px 24px;
     border: 1px solid rgba(0, 0, 0, 0.10);
     overflow: hidden;
+    height: fit-content;
 }
 
 .cart__clothes-item {
@@ -72,6 +73,20 @@
     background-color: transparent;
     cursor: pointer;
     width: fit-content;
+}
+
+.cart_clothes-item__delete::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 0;
+    background-color: #FF3333;
+    margin-top: -2px;
+    transition: .24s;
+}
+
+.cart_clothes-item__delete:hover::after {
+    width: 100%;
 }
 
 .cart__clothes-item__counter {

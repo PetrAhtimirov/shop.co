@@ -23,11 +23,25 @@
 .main-comments__triggers > button {
     border: none;
     background-color: inherit;
+    outline: none;
     transition: .3s;
 }
 
 .main-comments__triggers > button:disabled {
-    filter: opacity(40%);
+    filter: opacity(30%);
+}
+
+.main-comments__triggers > button::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 0;
+    background-color: #000;
+    transition: .24s;
+}
+
+.main-comments__triggers > button:hover::after, .main-comments__triggers > button:focus::after {
+    width: 100%;
 }
 
 .main-comments__inner {

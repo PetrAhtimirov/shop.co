@@ -8,7 +8,11 @@ const NewsLetterSub = () => {
                 Stay upto date about our latest offers
             </h2>
             <form className="news-letter-sub__form">
-                <div className="news-letter-sub__input-wrapper">
+                <div
+                    className="news-letter-sub__input-wrapper"
+                    onFocus={(e) => e.currentTarget.classList.add('focus')}
+                    onBlur={(e) => e.currentTarget.classList.remove('focus')}
+                >
                     <img src={mainImage} alt="mail" />
                     <input
                         type="email"
@@ -17,7 +21,11 @@ const NewsLetterSub = () => {
                         placeholder="Enter your email address"
                     />
                 </div>
-                <button className="news-letter-sub__submit" type="submit">
+                <button
+                    className="news-letter-sub__submit"
+                    type="submit"
+                    onClick={(e) => e.preventDefault()}
+                >
                     Subscribe to Newsletter
                 </button>
             </form>

@@ -1,5 +1,6 @@
 import './cartOrder.css';
 import ticketImage from './images/ticket.svg';
+import arrowRightImage from './images/arrow-right.svg';
 
 const CartOrder = ({ clothesList }) => {
     const calcSubtotal = () => {
@@ -52,6 +53,9 @@ const CartOrder = ({ clothesList }) => {
                 </div>
                 <button>Apply</button>
             </div>
+            <button className="cart__order__submit">
+                Go to Checkout <img src={arrowRightImage} alt="" />
+            </button>
         </div>
     );
 };

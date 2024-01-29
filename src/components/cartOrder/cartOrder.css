@@ -45,6 +45,7 @@
 .cart__order__promocode {
     display: flex;
     gap: 12px;
+    margin-bottom: 24px;
 }
 
 .cart__order__promocode__inner {
@@ -77,4 +78,19 @@
     border-radius: 62px;
     width: 119px;
     font-size: 1em;
+}
+
+.cart__order__submit {
+    width: 100%;
+    height: 60px;
+    border: none;
+    border-radius: 62px;
+    background-color: #000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-size: 1em;
+    margin-bottom: 10px;
 }

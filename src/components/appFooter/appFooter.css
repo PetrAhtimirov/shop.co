@@ -87,3 +87,31 @@ footer {
     padding: 0;
     margin: 0;
 }
+
+.footer__payment a {
+    outline: 1px solid transparent;
+    border-radius: 8px
+}
+
+.footer__payment a:focus { 
+    outline: 1px solid #000;
+}
+
+.footer-main a {
+    outline: none;
+    display: block;
+    width: fit-content;
+}
+
+.footer-main a:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 0;
+    background-color: rgba(0, 0, 0, 0.60);
+    transition: .24s;
+}
+
+.footer-main a:hover:after, .footer-main a:focus:after {
+    width: 100%;
+}
