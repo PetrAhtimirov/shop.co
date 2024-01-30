@@ -5,6 +5,7 @@ header {
 header a {
     color: inherit;
     text-decoration: none;
+    display: block;
 }
 
 .header__inner {

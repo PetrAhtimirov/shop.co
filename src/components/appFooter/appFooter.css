@@ -90,7 +90,8 @@ footer {
 
 .footer__payment a {
     outline: 1px solid transparent;
-    border-radius: 8px
+    border-radius: 8px;
+    display: block;
 }
 
 .footer__payment a:focus { 

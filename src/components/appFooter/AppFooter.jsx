@@ -28,16 +28,24 @@ const AppFooter = () => {
                             <h3>Company</h3>
                             <ul>
                                 <li>
-                                    <Link to="#">About</Link>
+                                    <Link className="dis" to="#">
+                                        About
+                                    </Link>
                                 </li>
                                 <li>
-                                    <Link to="#">Features</Link>
+                                    <Link className="dis" to="#">
+                                        Features
+                                    </Link>
                                 </li>
                                 <li>
-                                    <Link to="#">Works</Link>
+                                    <Link className="dis" to="#">
+                                        Works
+                                    </Link>
                                 </li>
                                 <li>
-                                    <Link to="#">Career</Link>
+                                    <Link className="dis" to="#">
+                                        Career
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -45,16 +53,24 @@ const AppFooter = () => {
                             <h3>Help</h3>
                             <ul>
                                 <li>
-                                    <Link to="#">Customer Support</Link>
+                                    <Link className="dis" to="#">
+                                        Customer Support
+                                    </Link>
                                 </li>
                                 <li>
-                                    <Link to="#">Delivery Details</Link>
+                                    <Link className="dis" to="#">
+                                        Delivery Details
+                                    </Link>
                                 </li>
                                 <li>
-                                    <Link to="#">Terms & Conditions</Link>
+                                    <Link className="dis" to="#">
+                                        Terms & Conditions
+                                    </Link>
                                 </li>
                                 <li>
-                                    <Link to="#">Privacy Policy</Link>
+                                    <Link className="dis" to="#">
+                                        Privacy Policy
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -62,16 +78,24 @@ const AppFooter = () => {
                             <h3>FAQ</h3>
                             <ul>
                                 <li>
-                                    <Link to="#">Account</Link>
+                                    <Link className="dis" to="#">
+                                        Account
+                                    </Link>
                                 </li>
                                 <li>
-                                    <Link to="#">Manage Deliveries</Link>
+                                    <Link className="dis" to="#">
+                                        Manage Deliveries
+                                    </Link>
                                 </li>
                                 <li>
-                                    <Link to="#">Orders</Link>
+                                    <Link className="dis" to="#">
+                                        Orders
+                                    </Link>
                                 </li>
                                 <li>
-                                    <Link to="#">Payments</Link>
+                                    <Link className="dis" to="#">
+                                        Payments
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -79,16 +103,24 @@ const AppFooter = () => {
                             <h3>Resources</h3>
                             <ul>
                                 <li>
-                                    <Link to="#">Free eBooks</Link>
+                                    <Link className="dis" to="#">
+                                        Free eBooks
+                                    </Link>
                                 </li>
                                 <li>
-                                    <Link to="#">Development Tutorial</Link>
+                                    <Link className="dis" to="#">
+                                        Development Tutorial
+                                    </Link>
                                 </li>
                                 <li>
-                                    <Link to="#">How to - Blog</Link>
+                                    <Link className="dis" to="#">
+                                        How to - Blog
+                                    </Link>
                                 </li>
                                 <li>
-                                    <Link to="#">Youtube Playlist</Link>
+                                    <Link className="dis" to="#">
+                                        Youtube Playlist
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -100,12 +132,12 @@ const AppFooter = () => {
                         </p>
                         <ul className="footer__payment">
                             <li>
-                                <Link to="#">
+                                <Link className="dis" to="#">
                                     <img src={visaImage} alt="Visa" />
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#">
+                                <Link className="dis" to="#">
                                     <img
                                         src={mastercardImage}
                                         alt="Master card"
@@ -113,17 +145,17 @@ const AppFooter = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#">
+                                <Link className="dis" to="#">
                                     <img src={paypalImage} alt="PayPal" />
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#">
+                                <Link className="dis" to="#">
                                     <img src={applepayImage} alt="Apple pay" />
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#">
+                                <Link className="dis" to="#">
                                     <img
                                         src={googlepayImage}
                                         alt="Google pay"

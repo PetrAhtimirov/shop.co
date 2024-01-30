@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 import './runningBrands.css';
 import kalvinKleinImage from './images/calvin klein.svg';
 import gucciImage from './images/gucci.svg';

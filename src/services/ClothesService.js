@@ -19,7 +19,8 @@ const useClothesService = () => {
                 if (
                     key !== 'minPrice' &&
                     key !== 'maxPrice' &&
-                    key !== 'size'
+                    key !== 'size' &&
+                    key !== 'query'
                 ) {
                     if (obj[key] !== filters[key]) {
                         return false;
@@ -41,6 +42,13 @@ const useClothesService = () => {
                 if (flag) {
                     return false;
                 }
+            }
+
+            if (
+                filters.query &&
+                !obj.name.toLowerCase().includes(filters.query.toLowerCase())
+            ) {
+                return false;
             }
 
             return true;

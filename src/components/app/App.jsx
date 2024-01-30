@@ -1,5 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { MainPage, ShopPage, ClothesItemPage, CartPage } from '../pages/index';
+import {
+    MainPage,
+    ShopPage,
+    ClothesItemPage,
+    CartPage,
+    SearchPage,
+} from '../pages/index';
 
 import './app.css';
 
@@ -15,6 +21,7 @@ function App() {
                         element={<ClothesItemPage />}
                     />
                     <Route path="/cart" element={<CartPage />} />
+                    <Route path="/search" element={<SearchPage />} />
                 </Routes>
             </div>
         </Router>

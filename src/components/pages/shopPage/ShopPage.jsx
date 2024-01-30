@@ -11,7 +11,7 @@ import ScrollToTop from '../../scrollToTop/ScrollToTop';
 import './shopPage.css';
 
 const ShopPage = () => {
-    let [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams();
     const urlSort = { sort: searchParams.get('sort') || 'Most Popular' };
     const urlFilter = {
         ...(searchParams.get('type') ? { type: searchParams.get('type') } : {}),
@@ -53,6 +53,7 @@ const ShopPage = () => {
                         deleteSearchParam={deleteSearchParam}
                     />
                     <ShopList
+                        title="Catalog"
                         sort={urlSort.sort}
                         filter={urlFilter}
                         appendSearchParam={appendSearchParam}

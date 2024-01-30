@@ -46,3 +46,29 @@ body {
   margin: auto;
   position: relative;
 }
+
+.dis:focus {
+  animation-name: dis;
+  animation-duration: .2s;
+  animation-iteration-count: 2;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes dis {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(3px);
+  }
+
+  75% {
+    transform: translateX(-3px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+

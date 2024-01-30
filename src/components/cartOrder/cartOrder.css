@@ -78,6 +78,12 @@
     border-radius: 62px;
     width: 119px;
     font-size: 1em;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.cart__order__promocode > button:hover {
+    background-color: rgba(0,0,0, 0.75);
 }
 
 .cart__order__submit {
@@ -93,4 +99,10 @@
     gap: 12px;
     font-size: 1em;
     margin-bottom: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.cart__order__submit:hover {
+    background-color: rgba(0,0,0, 0.75);
 }

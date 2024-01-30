@@ -18,13 +18,19 @@ const AppHeader = () => {
                             <NavLink to="/shop">Shop</NavLink>
                         </li>
                         <li className="main-nav__item">
-                            <NavLink to="#">On Sale</NavLink>
+                            <NavLink className="dis" to="#">
+                                On Sale
+                            </NavLink>
                         </li>
                         <li className="main-nav__item">
-                            <NavLink to="#">New Arrivals</NavLink>
+                            <NavLink className="dis" to="#">
+                                New Arrivals
+                            </NavLink>
                         </li>
                         <li className="main-nav__item">
-                            <NavLink to="#">Brands</NavLink>
+                            <NavLink className="dis" to="#">
+                                Brands
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>
@@ -32,6 +38,12 @@ const AppHeader = () => {
                     className="search"
                     onFocus={(e) => e.currentTarget.classList.add('focus')}
                     onBlur={(e) => e.currentTarget.classList.remove('focus')}
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        const inputValue =
+                            e.currentTarget.querySelector('input').value;
+                        window.location.href = `/search?query=${inputValue}`;
+                    }}
                 >
                     <img src={searchImage} alt="Search" />
                     <input
@@ -40,6 +52,7 @@ const AppHeader = () => {
                         name="search"
                         id="search"
                         placeholder="Search for products..."
+                        autoComplete="off"
                     />
                 </form>
                 <nav className="menu-nav">
@@ -50,7 +63,7 @@ const AppHeader = () => {
                             </Link>
                         </li>
                         <li className="menu-nav__item">
-                            <Link to="#">
+                            <Link className="dis" to="#">
                                 <img src={userImage} alt="User" />
                             </Link>
                         </li>
