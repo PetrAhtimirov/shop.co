@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import AppNotice from '../../appNotice/AppNotice';
 import AppHeader from '../../appHeader/AppHeader';
@@ -12,6 +13,10 @@ const ClothesItemPage = ({ addItemInCart }) => {
     const { id } = useParams();
     return (
         <>
+            <Helmet>
+                <meta name="description" content="Page with clothes item" />
+                <title>ClothesItem page</title>
+            </Helmet>
             <AppNotice />
             <AppHeader />
             <div className="container clothes-item-page__container">

@@ -1,4 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import AppHeader from '../../appHeader/AppHeader';
 import AppNotice from '../../appNotice/AppNotice';
@@ -40,6 +41,10 @@ const ShopPage = () => {
 
     return (
         <>
+            <Helmet>
+                <meta name="description" content="Page with list of clothes" />
+                <title>Shop page</title>
+            </Helmet>
             <ScrollToTop />
             <AppNotice />
             <AppHeader />

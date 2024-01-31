@@ -1,4 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import AppNotice from '../../appNotice/AppNotice';
 import AppHeader from '../../appHeader/AppHeader';
@@ -13,6 +14,10 @@ const SearchPage = () => {
     const query = searchParams.get('query');
     return (
         <>
+            <Helmet>
+                <meta name="description" content="Page with search" />
+                <title>Search page</title>
+            </Helmet>
             <AppNotice />
             <AppHeader />
             <div className="container search-page__container">

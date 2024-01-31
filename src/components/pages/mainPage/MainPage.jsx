@@ -1,3 +1,5 @@
+import { Helmet } from 'react-helmet';
+
 import AppNotice from '../../appNotice/AppNotice';
 import AppHeader from '../../appHeader/AppHeader';
 import MainBanner from '../../mainBanner/MainBanner';
@@ -12,6 +14,10 @@ import './mainPage.css';
 const MainPage = () => {
     return (
         <>
+            <Helmet>
+                <meta name="description" content="Main page" />
+                <title>Shop.co</title>
+            </Helmet>
             <ScrollToTop />
             <AppNotice />
             <AppHeader />

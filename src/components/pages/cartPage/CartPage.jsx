@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 import AppNotice from '../../appNotice/AppNotice';
 import AppHeader from '../../appHeader/AppHeader';
@@ -19,6 +20,10 @@ const CartPage = () => {
     }, [clothesList]);
     return (
         <>
+            <Helmet>
+                <meta name="description" content="Page with your shop cart" />
+                <title>Cart page</title>
+            </Helmet>
             <AppNotice />
             <AppHeader />
             <div className="container">
