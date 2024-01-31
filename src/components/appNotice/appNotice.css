@@ -3,6 +3,11 @@
     height: 38px;
     background-color: #000;
     color: #fff;
+    
+}
+
+.notice a:focus, .notice button:focus {
+    outline: 1px dashed #fff;
 }
 
 .notice__inner {

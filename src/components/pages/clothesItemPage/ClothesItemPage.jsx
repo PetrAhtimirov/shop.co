@@ -14,12 +14,19 @@ const ClothesItemPage = ({ addItemInCart }) => {
         <>
             <AppNotice />
             <AppHeader />
-            <div className="container">
+            <div className="container clothes-item-page__container">
                 <hr className="header-hr" />
-                <BreadCrumbs />
+                <BreadCrumbs
+                    linksList={[
+                        { name: 'Home', link: '/' },
+                        { name: 'Shop', link: '/shop' },
+                        { name: 'ClothesItem', link: `/clothesItem/${id}` },
+                    ]}
+                />
+                <ClothesItemInfo id={id} />
             </div>
-            <ClothesItemInfo id={id} />
-            {/* <AppFooter /> */}
+
+            <AppFooter />
         </>
     );
 };

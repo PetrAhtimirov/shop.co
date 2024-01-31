@@ -14,6 +14,19 @@ header a {
     gap: 40px;
 }
 
+.header__inner a {
+    outline: none;
+}
+
+.header__title > a {
+    outline: 1px dashed transparent;
+    transition: .24s;
+}
+
+.header__title > a:focus {
+    outline: 1px dashed #000;
+}
+
 .header__title {
     font-family: 'Integral CF', 'Arial', sans-serif;
     font-weight: 700;
@@ -25,10 +38,6 @@ header a {
     gap: 24px;
     list-style: none;
     padding: 0;
-}
-
-.main-nav__item > a {
-    outline: none;
 }
 
 .main-nav__item > a::after {

@@ -9,9 +9,10 @@ const AppHeader = () => {
     return (
         <header>
             <div className="header__inner container">
-                <Link to="/">
-                    <h1 className="header__title">Shop.co</h1>
-                </Link>
+                <h1 className="header__title">
+                    <Link to="/">Shop.co</Link>
+                </h1>
+
                 <nav className="main-nav">
                     <ul className="main-nav__list">
                         <li className="main-nav__item">

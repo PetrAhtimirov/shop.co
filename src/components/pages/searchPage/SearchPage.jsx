@@ -17,7 +17,12 @@ const SearchPage = () => {
             <AppHeader />
             <div className="container search-page__container">
                 <hr className="header-hr" />
-                <BreadCrumbs />
+                <BreadCrumbs
+                    linksList={[
+                        { name: 'Home', link: '/' },
+                        { name: 'Search', link: `/search?query=${query}` },
+                    ]}
+                />
                 <ShopList
                     title={`Found by the query "${query}"`}
                     sort="Most Popular"

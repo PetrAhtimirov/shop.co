@@ -38,6 +38,12 @@
     padding: 0 0;
     align-items: center;
     cursor: pointer;
+    outline: 1px dashed transparent;
+    transition: .24s;
+}
+
+.shop-list__sort-button:focus {
+    outline: 1px dashed #000;
 }
 
 .shop-list__sort-button > img {

@@ -1,6 +1,10 @@
-.clothes-item-info__container {
+.clothes-item-info {
     display: flex;
     gap: 40px;
+}
+
+.clothes-item-info *:focus {
+    outline: 1px dashed #000;
 }
 
 .clothes-item-info__images {
@@ -119,7 +123,6 @@
     align-items: center;
     justify-content: space-between;
     border-radius: 62px;
-    overflow: hidden;
     background-color: #f0f0f0;
     width: 170px;
 }
@@ -129,6 +132,13 @@
     padding: 14px 20px;
     background-color: inherit;
     cursor: pointer;
+    border-radius: 62px;
+    outline: 1px dashed transparent;
+    transition: .24s;
+}
+
+.clothes-item-info__counter > button:focus {
+    outline: 1px dashed #000;
 }
 
 .clothes-item-info__counter > button > img {
@@ -148,4 +158,9 @@
     font-size: 1em;
     font-weight: 500;
     cursor: pointer;
+    transition: .3s;
+}
+
+.clothes-item-info__add-to-card > button:hover {
+    background-color: rgba(0,0,0, 0.80)
 }

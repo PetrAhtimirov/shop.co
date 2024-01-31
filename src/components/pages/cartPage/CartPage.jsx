@@ -23,7 +23,12 @@ const CartPage = () => {
             <AppHeader />
             <div className="container">
                 <hr className="header-hr" />
-                <BreadCrumbs />
+                <BreadCrumbs
+                    linksList={[
+                        { name: 'Home', link: '/' },
+                        { name: 'Cart', link: '/cart' },
+                    ]}
+                />
                 <h2 className="cart__header">Your Cart</h2>
                 <div className="cart__inner">
                     <CartClothesList

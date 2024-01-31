@@ -45,7 +45,12 @@ const ShopPage = () => {
             <AppHeader />
             <div className="container">
                 <hr className="header-hr" />
-                <BreadCrumbs />
+                <BreadCrumbs
+                    linksList={[
+                        { name: 'Home', link: '/' },
+                        { name: 'Shop', link: '/shop' },
+                    ]}
+                />
                 <div className="shop-page__content">
                     <Filters
                         filter={urlFilter}

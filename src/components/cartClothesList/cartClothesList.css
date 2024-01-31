@@ -73,6 +73,7 @@
     background-color: transparent;
     cursor: pointer;
     width: fit-content;
+    outline: none;
 }
 
 .cart_clothes-item__delete::after {
@@ -85,14 +86,15 @@
     transition: .24s;
 }
 
-.cart_clothes-item__delete:hover::after {
+.cart_clothes-item__delete:hover::after, 
+.cart_clothes-item__delete:focus::after {
     width: 100%;
 }
 
 .cart__clothes-item__counter {
     background-color: #f0f0f0;
     border-radius: 62px;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -103,5 +105,12 @@
     border: none;
     background-color: transparent;
     padding: 12px 20px;
+    border-radius: 62px;
     cursor: pointer;
+    outline: 1px dashed transparent;
+    transition: .24s;
+}
+
+.cart__clothes-item__counter button:focus {
+    outline: 1px dashed #000;
 }

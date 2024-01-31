@@ -106,3 +106,11 @@
 .cart__order__submit:hover {
     background-color: rgba(0,0,0, 0.75);
 }
+
+.cart__order button {
+    outline: 1px solid transparent;
+}
+
+.cart__order button:focus {
+    outline: 1px dashed #000;
+}

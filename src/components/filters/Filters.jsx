@@ -51,6 +51,7 @@ const Filters = ({ filter, appendSearchParam, deleteSearchParam }) => {
                         <label
                             className="filters__checkbox-label"
                             htmlFor={sizeType}
+                            tabIndex={0}
                         >
                             {sizeType}
                         </label>

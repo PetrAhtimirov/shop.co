@@ -127,3 +127,7 @@
     padding: 0;
     gap: 20px;
 }
+
+.filters *:focus {
+    outline: 1px dashed #000;
+}
