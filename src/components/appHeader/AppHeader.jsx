@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, redirect } from 'react-router-dom';
 
 import './appHeader.css';
 import searchImage from '../../resources/icons/search.svg';
@@ -43,7 +43,7 @@ const AppHeader = () => {
                         e.preventDefault();
                         const inputValue =
                             e.currentTarget.querySelector('input').value;
-                        window.location.href = `/search?query=${inputValue}`;
+                        window.location.href = `/shop.co/search?query=${inputValue}`;
                     }}
                 >
                     <img src={searchImage} alt="Search" />

@@ -15,7 +15,7 @@ const SearchPage = () => {
     return (
         <>
             <Helmet>
-                <meta name="description" content="Page with search" />
+                <meta name="description" content="Page with search results" />
                 <title>Search page</title>
             </Helmet>
             <AppNotice />
