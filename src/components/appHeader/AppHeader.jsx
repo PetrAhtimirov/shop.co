@@ -1,4 +1,4 @@
-import { Link, NavLink, redirect } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 import './appHeader.css';
 import searchImage from '../../resources/icons/search.svg';
@@ -6,6 +6,7 @@ import cartImage from '../../resources/icons/cart.svg';
 import userImage from '../../resources/icons/user.svg';
 
 const AppHeader = () => {
+    let navigate = useNavigate();
     return (
         <header>
             <div className="header__inner container">
@@ -43,7 +44,7 @@ const AppHeader = () => {
                         e.preventDefault();
                         const inputValue =
                             e.currentTarget.querySelector('input').value;
-                        window.location.href = `/shop.co/search?query=${inputValue}`;
+                        return navigate(`/search?query=${inputValue}`);
                     }}
                 >
                     <img src={searchImage} alt="Search" />

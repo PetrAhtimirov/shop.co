@@ -148,7 +148,19 @@ const ClothesItemInfo = ({ id }) => {
                             <img src={plusImage} alt="plus" />
                         </button>
                     </div>
-                    <button onClick={onAddItemInCart}>Add to Cart</button>
+                    <button
+                        className="clothes-item-info__add-to-card__btn"
+                        onClick={(e) => {
+                            onAddItemInCart();
+                            const btn = e.currentTarget;
+                            btn.classList.add('active');
+                            setTimeout(() => {
+                                btn.classList.remove('active');
+                            }, '1000');
+                        }}
+                    >
+                        Add to Cart
+                    </button>
                 </div>
             </div>
         </section>

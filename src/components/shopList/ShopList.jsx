@@ -36,7 +36,7 @@ const ShopList = ({
             (currentSlide - 1) * itemsOnSlide,
             currentSlide * itemsOnSlide
         ).then(setClothesList);
-    }, [appendSearchParam, currentSlide]);
+    }, [appendSearchParam, currentSlide, title]);
 
     const clothes = clothesList.map(
         ({ id, name, score, price, discount, discountPrice, preview }) => (

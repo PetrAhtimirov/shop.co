@@ -158,9 +158,27 @@
     font-size: 1em;
     font-weight: 500;
     cursor: pointer;
+    position: relative;
     transition: .3s;
 }
 
 .clothes-item-info__add-to-card > button:hover {
     background-color: rgba(0,0,0, 0.80)
+}
+
+.clothes-item-info__add-to-card__btn::after {
+    content: 'The product has been added to the cart';
+    display: block;
+    color: gray;
+    position: absolute;
+    z-index: 2;
+    top: 70px;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    transition: .3s;
+}
+
+.clothes-item-info__add-to-card__btn.active::after {
+    opacity: 1;
 }
