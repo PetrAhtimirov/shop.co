@@ -12,7 +12,7 @@ import './cartPage.css';
 
 const CartPage = () => {
     const [clothesList, setClothesList] = useState(
-        JSON.parse(localStorage.getItem('itemsInCart'))
+        JSON.parse(localStorage.getItem('itemsInCart')) || []
     );
 
     useEffect(() => {
